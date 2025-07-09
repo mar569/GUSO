@@ -1,10 +1,8 @@
 import { useState, useCallback, Suspense, memo } from 'react';
 import Slide from './Slide';
-
 import { SLIDES, APP_CONFIG } from '../../constants';
 import LoadingSpinner from './LoadingSpinner/LoadingSpinner';
-import bgImage from '../../assets/FPS/FpsFon.svg';
-
+import bgImage from '../../assets/fps/FpsFon.svg';
 const PageAbout: React.FC = () => {
     const [currentSlide, setCurrentSlide] = useState<number>(0);
     const [isTransitioning, setIsTransitioning] = useState<boolean>(false);
