@@ -1,5 +1,5 @@
 import type { SlideItem } from '../interfaces/slide.interface';
-import fps1 from '../assets/FPS/fps_1.svg';
+import fps1 from '../assets/fps/fps_1.svg';
 import fps2_1 from '../assets/fps/Group 1.svg';
 import fps2_2 from '../assets/fps/Group 2.svg';
 import fps2_4 from '../assets/fps/Group 4.svg';
