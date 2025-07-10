@@ -15,11 +15,10 @@ const Atmosfere: React.FC = () => {
                 src={atmosfereBg}
                 alt="Фон атмосферы бара"
                 className="absolute inset-0 object-cover w-full h-full"
+                loading="lazy"
             />
 
-
             <div className="relative mx-auto max-w-[1700px] px-2 sm:px-8 w-full h-full pt-10 pb-20">
-
                 <div className="mb-8">
                     <h2 className="text-[14px] text-center md:text-left font-medium text-[#6EFF24] md:text-[18px]">
                         BAR & HOOKAH
@@ -29,16 +28,15 @@ const Atmosfere: React.FC = () => {
                     </h1>
                 </div>
 
-                {/* Основной фотоблок */}
                 <div className="relative w-full gap-2 h-auto flex flex-col lg:flex-row justify-center flex-grow">
                     <div className="w-full lg:w-[66.66%] flex flex-col">
-
                         <div className="flex gap-2 mb-2 flex-col lg:flex-row">
                             <div className="h-[431px] relative overflow-hidden">
                                 <img
                                     src={bg1}
                                     alt="Главный зал бара"
                                     className="h-full object-cover transition-transform duration-500 hover:scale-105"
+                                    loading="lazy"
                                 />
                             </div>
                             <div className="h-[431px] relative overflow-hidden flex-1">
@@ -46,23 +44,23 @@ const Atmosfere: React.FC = () => {
                                     src={bg2}
                                     alt="Барная стойка"
                                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                                    loading="lazy"
                                 />
                             </div>
                         </div>
 
-
                         <div className="grid grid-cols-2 sm:grid-cols-4 w-full h-[364px] gap-2">
                             <div className="h-full relative overflow-hidden">
-                                <img src={bg4} alt="Интерьер 1" className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
+                                <img src={bg4} alt="Интерьер 1" className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" loading="lazy" />
                             </div>
                             <div className="h-full relative overflow-hidden">
-                                <img src={bg5} alt="Интерьер 2" className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
+                                <img src={bg5} alt="Интерьер 2" className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" loading="lazy" />
                             </div>
                             <div className="h-full relative overflow-hidden hidden sm:block">
-                                <img src={bg6} alt="Интерьер 3" className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
+                                <img src={bg6} alt="Интерьер 3" className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" loading="lazy" />
                             </div>
                             <div className="h-full relative overflow-hidden hidden sm:block">
-                                <img src={bg7} alt="Интерьер 4" className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
+                                <img src={bg7} alt="Интерьер 4" className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" loading="lazy" />
                             </div>
                         </div>
                     </div>
@@ -72,6 +70,7 @@ const Atmosfere: React.FC = () => {
                             src={bg3}
                             alt="Коктейль и барная зона"
                             className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                            loading="lazy"
                         />
                     </div>
                 </div>

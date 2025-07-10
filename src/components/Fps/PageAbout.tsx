@@ -1,8 +1,10 @@
-import { useState, useCallback, Suspense, memo } from 'react';
-import Slide from './Slide';
+import { useState, useCallback, Suspense, memo, lazy } from 'react';
+
 import { SLIDES, APP_CONFIG } from '../../constants';
 import LoadingSpinner from './LoadingSpinner/LoadingSpinner';
 import bgImage from '../../assets/fps/FpsFon.svg';
+
+const Slide = lazy(() => import('./Slide'));
 
 const PageAbout: React.FC = () => {
     const [currentSlide, setCurrentSlide] = useState<number>(0);
@@ -10,8 +12,6 @@ const PageAbout: React.FC = () => {
 
     const changeSlide = useCallback((direction: 'next' | 'prev' | number) => {
         setIsTransitioning(true);
-
-
         if (typeof direction === 'number') {
             setCurrentSlide(direction);
         } else if (direction === 'next') {
@@ -19,8 +19,6 @@ const PageAbout: React.FC = () => {
         } else {
             setCurrentSlide(prev => (prev - 1 + SLIDES.length) % SLIDES.length);
         }
-
-
         setIsTransitioning(false);
     }, []);
 
@@ -49,15 +47,17 @@ const PageAbout: React.FC = () => {
                         About us
                     </h2>
 
-                    <Slide
-                        slide={SLIDES[currentSlide]}
-                        isTransitioning={isTransitioning}
-                        currentSlide={currentSlide}
-                        totalSlides={SLIDES.length}
-                        onNext={() => changeSlide('next')}
-                        onPrev={() => changeSlide('prev')}
-                        onSelect={(index) => changeSlide(index)}
-                    />
+                    <Suspense fallback={<LoadingSpinner />}>
+                        <Slide
+                            slide={SLIDES[currentSlide]}
+                            isTransitioning={isTransitioning}
+                            currentSlide={currentSlide}
+                            totalSlides={SLIDES.length}
+                            onNext={() => changeSlide('next')}
+                            onPrev={() => changeSlide('prev')}
+                            onSelect={(index) => changeSlide(index)}
+                        />
+                    </Suspense>
                 </div>
             </div>
         </div>

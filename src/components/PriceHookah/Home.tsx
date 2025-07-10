@@ -1,9 +1,10 @@
-import { Suspense, useCallback, useState } from 'react';
+import { lazy, Suspense, useCallback, useState } from 'react';
 import { APP_CONFIG, HookahSLIDES } from '../../constants/hookah.constants';
 import LoadingSpinner from '../Fps/LoadingSpinner/LoadingSpinner';
-import HookahSlide from './HookahSlide';
-import HookahNavigate from './HookahNavigate';
 import bgImage from '../../assets/hookah/BG.svg';
+
+const HookahSlide = lazy(() => import('./HookahSlide'));
+const HookahNavigate = lazy(() => import('./HookahNavigate'));
 
 const PriceHookah: React.FC = () => {
     const [currentSlide, setCurrentSlide] = useState<number>(0);
@@ -51,20 +52,25 @@ const PriceHookah: React.FC = () => {
                 <h2 className={`transform transition-all duration-500 ${isTransitioning ? 'translate-x-10' : 'translate-x-0'} text-[18px] text-[#6EFF24] text-center md:text-left`}>
                     Акции
                 </h2>
-                <HookahSlide
-                    slide={HookahSLIDES[currentSlide]}
-                    isTransitioning={isTransitioning} />
+                <Suspense fallback={<LoadingSpinner />}>
+                    <HookahSlide
+                        slide={HookahSLIDES[currentSlide]}
+                        isTransitioning={isTransitioning} />
+                </Suspense>
 
-                <HookahNavigate
-                    currentSlide={currentSlide}
-                    totalSlides={HookahSLIDES.length}
-                    onNext={() => changeSlide('next')}
-                    onPrev={() => changeSlide('prev')}
-                    onSelect={changeSlide}
-                    primaryColor="#6EFF24" />
+                <Suspense fallback={<LoadingSpinner />}>
+                    <HookahNavigate
+                        currentSlide={currentSlide}
+                        totalSlides={HookahSLIDES.length}
+                        onNext={() => changeSlide('next')}
+                        onPrev={() => changeSlide('prev')}
+                        onSelect={changeSlide}
+                        primaryColor="#6EFF24" />
+                </Suspense>
             </div>
         </div>
     );
 }
 
 export default PriceHookah;
+

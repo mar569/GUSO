@@ -1,4 +1,4 @@
-import { memo } from 'react';
+
 import { IoIosStarHalf } from "react-icons/io";
 
 const ModalHeader: React.FC = () => (
@@ -40,4 +40,4 @@ const ModalHeader: React.FC = () => (
     </div>
 );
 
-export default memo(ModalHeader);
+export default ModalHeader;

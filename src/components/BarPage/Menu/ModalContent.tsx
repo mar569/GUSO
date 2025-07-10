@@ -1,5 +1,7 @@
-import { memo, useMemo } from 'react';
-import MenuItem from './MenuItem';
+import { memo, useMemo, lazy, Suspense } from 'react';
+import LoadingSpinner from '../../Fps/LoadingSpinner/LoadingSpinner';
+
+const MenuItem = lazy(() => import('./MenuItem'));
 
 const menuSections = [
     {
@@ -70,6 +72,8 @@ const menuSections = [
 ];
 
 
+
+
 const ModalContent = memo(() => {
     const sections = useMemo(() => menuSections, []);
 
@@ -83,10 +87,9 @@ const ModalContent = memo(() => {
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {section.items.map((item) => (
-                            <MenuItem
-                                key={`${section.category}-${item.name}`}
-                                {...item}
-                            />
+                            <Suspense key={`${section.category}-${item.name}`} fallback={<LoadingSpinner />}>
+                                <MenuItem {...item} />
+                            </Suspense>
                         ))}
                     </div>
                 </section>
@@ -96,3 +99,4 @@ const ModalContent = memo(() => {
 });
 
 export default ModalContent;
+
