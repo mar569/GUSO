@@ -40,7 +40,7 @@ const MapLocation: React.FC<{ address: string }> = ({ address }) => {
                 </p>
                 <button
                     onClick={openInYandexMaps}
-                    className="mt-4 flex items-center cursor-pointer bg-gradient-to-r from-[#652689] to-[#30105c] hover:from-[#7a30b3] hover:to-[#45187d] text-white py-3 px-6 rounded-lg transition-all duration-300"
+                    className="mt-4 flex items-center cursor-pointer bg-purple-800 hover:bg-purple-600 duration-700 text-white py-3 px-6 rounded-lg transition-all "
                 >
                     <span>Открыть в Яндекс.Картах</span>
                     <IoIosArrowRoundUp className="ml-2 rotate-45" size={24} />

@@ -39,7 +39,7 @@ const MenuModal = () => {
             <button
                 onClick={handleToggle}
                 className="w-[351px] md:w-[315px] flex items-center justify-center 
-                    bg-[#802ab9] hover:bg-[#9A20E0] transition-colors text-white 
+                    bg-purple-800 hover:bg-[#9A20E0] transition-colors text-white 
                     text-[24px] md:text-[36px] px-8 py-2 rounded-full cursor-pointer
                     focus:outline-none focus:ring-2 focus:ring-purple-800 duration-500"
                 style={{ fontFamily: 'Poppins', boxShadow: '4px 10px 30px rgba(88, 32, 186, 0.6)' }}

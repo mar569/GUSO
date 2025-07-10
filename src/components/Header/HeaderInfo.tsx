@@ -1,5 +1,7 @@
 import headImage from '../../assets/fon/head_2.svg';
 import { IoIosArrowRoundUp } from "react-icons/io";
+
+
 export function HeaderInfo() {
     return (
         <div className="flex flex-col items-start justify-start pt-[262px] w-full">

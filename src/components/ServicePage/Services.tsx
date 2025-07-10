@@ -9,7 +9,7 @@ const Services: React.FC = () => {
     return (
         <div className="relative w-full max-w-[1920px] mx-auto min-h-screen">
 
-            <div className="absolute inset-0 -z-10 ">
+            <div className="absolute inset-0 ">
                 <img
                     src={servicesBg}
                     alt="Фон секции контактов"
@@ -38,7 +38,7 @@ const Services: React.FC = () => {
                             </div>
                             <div className='flex gap-4'>
                                 <a href="#">
-                                    <img src={vk} alt="ВКонтакте" className='w-[40px] h-[40px] hover:scale-110 transition-transform' />
+                                    <img src={vk} alt="ВКонтакте" className='w-[40px] h-[40px] hover:scale-110 transition-transform ' />
                                 </a>
                                 <a href="#">
                                     <img src={whts} alt="WhatsApp" className='w-[40px] h-[40px] hover:scale-110 transition-transform' />
@@ -63,30 +63,30 @@ const Services: React.FC = () => {
                     <img
                         src={contBg}
                         alt="Интерьер заведения"
-                        className="w-full max-h-[400px] object-contain object-top mb-8"
+                        className="w-full max-h-[400px] object-cover mb-8"
                     />
 
                     <div className="px-0 md:px-4">
                         <h2 className='text-[28px] text-[#6EFF24] mb-4'>
                             Наши контакты
                         </h2>
-                        <p className='text-[18px] text-white mb-6'>
+                        <p className='text-[18px] text-[#fff] mb-6'>
                             Наши сотрудники всегда готовы помочь вам с выбором, оформить бронь и предоставить лучший сервис
                         </p>
                         <div className="mb-2 text-center md:text-left">
-                            <a href="tel:+79994333333" className='text-[32px] text-white hover:text-[#6EFF24] transition-colors'>
+                            <a href="tel:+79994333333" className='text-[32px] text-[#fff] hover:text-[#6EFF24] transition-colors'>
                                 +7 (999) 433-33-33
                             </a>
                         </div>
                         <div className='flex gap-4 justify-center'>
                             <a href="#">
-                                <img src={vk} alt="ВКонтакте" className='w-[84px] h-[84px] md:w-[100px] md:h-[100px] hover:scale-110 transition-transform' />
+                                <img src={vk} alt="ВКонтакте" className='bg-black rounded-3xl w-[84px] h-[84px] md:w-[100px] md:h-[100px] hover:scale-110 transition-transform' />
                             </a>
                             <a href="#">
-                                <img src={whts} alt="WhatsApp" className='w-[84px] h-[84px] md:w-[100px] md:h-[100px] hover:scale-110 transition-transform' />
+                                <img src={whts} alt="WhatsApp" className='bg-black rounded-3xl w-[84px] h-[84px] md:w-[100px] md:h-[100px] hover:scale-110 transition-transform' />
                             </a>
                             <a href="#">
-                                <img src={tg} alt="Telegram" className='w-[84px] h-[84px] md:w-[100px] md:h-[100px] hover:scale-110 transition-transform' />
+                                <img src={tg} alt="Telegram" className='bg-black rounded-3xl w-[84px] h-[84px] md:w-[100px] md:h-[100px] hover:scale-110 transition-transform' />
                             </a>
                         </div>
 
