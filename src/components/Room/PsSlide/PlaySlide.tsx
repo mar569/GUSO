@@ -16,7 +16,7 @@ const PlaySlide: React.FC<PlaylideProps> = React.memo(({ slide, isTransitioning 
         <div className="flex flex-col-reverse lg:flex-row gap-4 lg:gap-8 w-full items-center h-auto lg:h-full lg:justify-center">
             <div className="w-full lg:w-[780px] flex flex-col justify-center h-auto lg:h-full mb-6 lg:mb-0">
                 <div className="lg:max-w-[90%]">
-                    <h2 className={`${descClasses} uppercase leading-[1.1] lg:leading-relaxed`}>
+                    <h2 className={`${descClasses} uppercase leading-[1.3] lg:leading-relaxed`}>
                         {slide.description}
                     </h2>
                 </div>
@@ -31,7 +31,7 @@ const PlaySlide: React.FC<PlaylideProps> = React.memo(({ slide, isTransitioning 
                         <LazyImage
                             src={imgSrc}
                             alt={`Изображение ${index + 1}`}
-                            className="w-full h-[300px] sm:h-[350px] lg:h-[450px] xl:h-full object-cover transition-transform duration-300 hover:scale-110"
+                            className={`w-full ${slide.id === 1 ? 'h-[521px]' : 'h-[210px] sm:h-[350px] lg:h-[450px] xl:h-full'} object-cover transition-transform duration-300 hover:scale-110`}
                         />
                     </div>
                 ))}

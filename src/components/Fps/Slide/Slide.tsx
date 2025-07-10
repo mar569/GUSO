@@ -31,7 +31,7 @@ const Slide: React.FC<SlideProps> = ({
                 <div className="w-full lg:w-1/2 flex flex-col justify-center">
                     <div>
                         <h2 className={titleClasses}>{slide.title}</h2>
-                        <p className={`${descClasses} leading-tight sm:leading-relaxed`}>
+                        <p className={`${descClasses} uppercase leading-[1.2] lg:leading-relaxed`}>
                             {slide.description}
                         </p>
                     </div>

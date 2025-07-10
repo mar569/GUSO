@@ -17,9 +17,9 @@ const HookahSlide: React.FC<PlaylideProps> = React.memo(({ slide, isTransitionin
         <div className="flex flex-col lg:flex-row gap-6 md:gap-8 w-full items-center pt-5">
             <div className="hidden lg:flex w-full lg:w-[780px] flex-col justify-center h-full gap-4">
                 <div>
-                    <h2 className={`${descClasses} uppercase leading-[100%] sm:leading-relaxed text-left`}>
+                    <h3 className={`${descClasses} uppercase leading-[100%] sm:leading-relaxed text-left`}>
                         {slide.description}
-                    </h2>
+                    </h3>
                 </div>
             </div>
 
