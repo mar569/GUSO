@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=Edu+NSW+ACT+Hand+Pre:wght@400..700&family=Kapakana:wght@300..400&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Libertinus+Math&family=Monsieur+La+Doulaise&family=Permanent+Marker&family=Savate:ital,wght@0,200..900;1,200..900&family=Twinkle+Star&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Hand+Pre:wght@400..700&family=Kapakana:wght@300..400&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Libertinus+Math&family=Permanent+Marker&family=Savate:ital,wght@0,200..900;1,200..900&display=swap');
 @import 'tailwindcss';
 
@@ -19,6 +20,10 @@
 body {
   margin: 0;
   overflow-x: hidden;
+}
+
+h2 {
+  font-family: 'Bad Script', cursive;
 }
 
 .bgI {

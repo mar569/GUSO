@@ -12,9 +12,9 @@ export const MobileMenuButton: React.FC<IMobileMenuButtonProps> = ({ isOpen, tog
             aria-expanded={isOpen}
         >
             <svg
-                className="w-8 h-8 text-[#bababa]"
+                className="w-10 h-10 text-white"
                 xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
+                viewBox="0 0 27 27"
             >
                 {isOpen ? (
                     <path stroke="currentColor" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />

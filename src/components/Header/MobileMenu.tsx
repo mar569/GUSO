@@ -31,7 +31,8 @@ export const MobileMenu: React.FC<IMobileMenuProps> = ({ isOpen, scrollToAbout, 
                     variants={menuVariants}
                     className="md:hidden absolute top-10 left-0 w-full shadow-lg z-50"
                 >
-                    <ul className="flex flex-col text-center py-2">
+                    <ul className="flex flex-col text-center py-2"
+                        style={{ fontFamily: 'Poppins' }}>
                         <li className="py-3 hover:bg-green-500" onClick={scrollToAbout}>
                             <a href="#" className="block">О нас</a>
                         </li>
@@ -53,7 +54,7 @@ export const MobileMenu: React.FC<IMobileMenuProps> = ({ isOpen, scrollToAbout, 
                             <a href="#" className="block">Наши цены</a>
                         </li>
                         <li className="p-2">
-                            <button className="bg-[#232323] text-white py-2 px-4 rounded-xl cursor-pointer hover:text-black hover:bg-[#505050] duration-500">
+                            <button className="bg-gradient-to-b from-[#8a7c92] to-[#436237] text-white py-2 px-4 rounded-xl cursor-pointer hover:text-black hover:bg-[#505050] duration-500">
                                 Связаться с нами
                             </button>
                         </li>

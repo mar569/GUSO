@@ -7,23 +7,23 @@ const ModalFooter = ({ onClose }: { onClose: () => void }) => (
         </div>
         <div className="flex flex-wrap gap-3 justify-center">
             <a
-                href="/public/menu_aero.pdf"
+                href="/menu_aero.pdf"
                 download
-                className="bg-transparent hover:bg-[#694e78] duration-500 border border-[#b17e36] text-white px-4 py-2 rounded-lg text-sm font-light transition-colors whitespace-nowrap"
+                className="bg-black/10 hover:bg-[#694e78] duration-500 border border-[#b17e36] text-white px-4 py-2 rounded-lg text-sm font-light transition-colors whitespace-nowrap"
             >
                 Скачать PDF
             </a>
             <a
-                href="/public/menu_aero.pdf"
+                href="/menu_aero.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-transparent hover:bg-[#694e78] duration-500 border border-[#413452] text-white px-4 py-2 rounded-lg text-sm font-light transition-colors whitespace-nowrap"
+                className="bg-black/10 hover:bg-[#694e78] duration-500 border border-[#422963] text-white px-4 py-2 rounded-lg text-sm font-light transition-colors whitespace-nowrap"
             >
                 Открыть в новой вкладке
             </a>
             <button
                 onClick={onClose}
-                className="bg-transparent hover:bg-[#694e78] duration-500 cursor-pointer border border-[#7D34EB] text-white px-4 py-2 rounded-lg text-sm font-lighttransition-colors whitespace-nowrap"
+                className="bg-black/10 hover:bg-[#694e78] duration-500 cursor-pointer border border-[#7D34EB] text-white px-4 py-2 rounded-lg text-sm font-lighttransition-colors whitespace-nowrap"
             >
                 Закрыть
             </button>

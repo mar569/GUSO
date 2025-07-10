@@ -2,6 +2,7 @@ import type { SlideItem } from '../interfaces/slide.interface';
 import slide_1 from '../assets/BarPage/alco/PIC_1.svg';
 import slide_2 from '../assets/BarPage/alco/PIC_2.svg';
 import slide_3 from '../assets/BarPage/alco/PIC_3.svg';
+
 export const Bar_SLIDES: SlideItem[] = [
   {
     id: 1,

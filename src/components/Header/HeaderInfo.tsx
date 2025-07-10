@@ -1,5 +1,5 @@
 import headImage from '../../assets/fon/head_2.svg';
-
+import { IoIosArrowRoundUp } from "react-icons/io";
 export function HeaderInfo() {
     return (
         <div className="flex flex-col items-start justify-start pt-[262px] w-full">
@@ -20,8 +20,10 @@ export function HeaderInfo() {
                     >
                         Больше, чем просто компьютерный клуб
                     </h2>
-                    <button className="bg-[#232323] text-white py-2 px-6 rounded-xl cursor-pointer hover:text-black hover:bg-[#505050] duration-500 w-fit">
+                    <button className="bg-gradient-to-b from-[#8a7c92] to-[#436237] flex  text-white py-2 px-6 rounded-xl cursor-pointer hover:text-black hover:bg-[#505050] duration-500 w-fit"
+                        style={{ fontFamily: 'Poppins' }}>
                         Войти в аккаунт
+                        <IoIosArrowRoundUp className="ml-2 rotate-45" size={24} />
                     </button>
                 </div>
             </div>

@@ -12,7 +12,8 @@ export const DekstopNav: React.FC<INavigation> = ({ className, scrollToAbout, sc
 
     return (
         <nav className={`hidden md:flex flex-grow justify-center ${className}`}>
-            <ul className="flex text-center">
+            <ul className="flex text-center"
+                style={{ fontFamily: 'Poppins' }}>
                 <li className="cursor-pointer mx-4 text-[18px] hover:text-green-500 duration-500" onClick={scrollToAbout}>
                     О нас
                 </li>

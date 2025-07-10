@@ -1,4 +1,4 @@
-import { memo, useMemo, lazy, Suspense } from 'react';
+import { memo, useMemo, lazy, Suspense, useEffect, useState } from 'react';
 import LoadingSpinner from '../../Fps/LoadingSpinner/LoadingSpinner';
 
 const MenuItem = lazy(() => import('./MenuItem'));
@@ -71,32 +71,43 @@ const menuSections = [
     }
 ];
 
-
-
-
 const ModalContent = memo(() => {
+    const [isLoading, setIsLoading] = useState(true);
     const sections = useMemo(() => menuSections, []);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsLoading(false);
+        }, 2000);
+
+        return () => clearTimeout(timer);
+    }, []);
 
     return (
         <div className="p-6 overflow-y-auto max-h-[42vh] md:max-h-[70vh] custom-scroll ">
-            {sections.map((section) => (
-                <section key={section.category} className="mb-8">
-                    <h3 className="text-white text-xl md:text-2xl font-bold mb-4 pb-2 border-b-2 border-[#B734EB]"
-                        style={{ fontFamily: 'Permanent Marker, cursive' }}>
-                        {section.category}
-                    </h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        {section.items.map((item) => (
-                            <Suspense key={`${section.category}-${item.name}`} fallback={<LoadingSpinner />}>
-                                <MenuItem {...item} />
-                            </Suspense>
-                        ))}
-                    </div>
-                </section>
-            ))}
+            {isLoading ? (
+                <div className="flex items-center justify-center h-full w-full">
+                    <LoadingSpinner size="lg" />
+                </div>
+            ) : (
+                sections.map((section) => (
+                    <section key={section.category} className="mb-8">
+                        <h3 className="text-white text-xl md:text-2xl font-bold mb-4 pb-2 border-b-2 border-[#B734EB]"
+                            style={{ fontFamily: 'Permanent Marker, cursive' }}>
+                            {section.category}
+                        </h3>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            {section.items.map((item) => (
+                                <Suspense key={`${section.category}-${item.name}`} fallback={<LoadingSpinner />}>
+                                    <MenuItem {...item} />
+                                </Suspense>
+                            ))}
+                        </div>
+                    </section>
+                ))
+            )}
         </div>
     );
 });
 
 export default ModalContent;
-

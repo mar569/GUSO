@@ -16,12 +16,13 @@ const MenuBar: React.FC = () => {
                 <div className='flex flex-col w-full py-20'>
 
                     <h2 className='text-[#6EFF24] text-[36px] sm:text-[44px] md:text-[128px] font-bold text-center md:text-left'
-                        style={{ fontFamily: 'Bebas Neue', lineHeight: '130%' }}>
+                        style={{ lineHeight: '130%' }}>
                         Наше меню
                     </h2>
                     <div className='flex flex-col mt-2 md:mt-0 sm:flex-row items-center gap-4 w-full max-w-[750px]'>
                         <MenuModal />
-                        <p className='text-white text-sm md:text-[20px]'>
+                        <p className='text-white text-sm md:text-[20px]'
+                            style={{ fontFamily: "'Savate', sans-serif" }}>
                             ← нажмите, если хотите увидеть больше
                         </p>
                     </div>
