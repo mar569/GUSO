@@ -23,7 +23,7 @@ const ModalFooter = ({ onClose }: { onClose: () => void }) => (
             </a>
             <button
                 onClick={onClose}
-                className="bg-transparent hover:bg-[#694e78] duration-500 cursor-pointer border border-[#7D34EB] text-white px-4 py-2 rounded-lg text-sm font-light  transition-colors whitespace-nowrap"
+                className="bg-transparent hover:bg-[#694e78] duration-500 cursor-pointer border border-[#7D34EB] text-white px-4 py-2 rounded-lg text-sm font-lighttransition-colors whitespace-nowrap"
             >
                 Закрыть
             </button>

@@ -78,7 +78,7 @@ const ModalContent = memo(() => {
     const sections = useMemo(() => menuSections, []);
 
     return (
-        <div className="p-6 overflow-y-auto max-h-[46vh] md:max-h-[70vh] custom-scroll ">
+        <div className="p-6 overflow-y-auto max-h-[42vh] md:max-h-[70vh] custom-scroll ">
             {sections.map((section) => (
                 <section key={section.category} className="mb-8">
                     <h3 className="text-white text-xl md:text-2xl font-bold mb-4 pb-2 border-b-2 border-[#B734EB]"
