@@ -18,8 +18,8 @@ const ModalHeader: React.FC = () => (
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
                     display: 'inline-block',
-                    fontSize: '8rem',
-                    lineHeight: '1.2',
+                    fontSize: '6rem',
+                    lineHeight: '1.1',
                     fontFamily: "'Permanent Marker', cursive",
                     textTransform: 'uppercase',
                 }}

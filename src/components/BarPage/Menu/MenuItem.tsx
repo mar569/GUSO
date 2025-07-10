@@ -10,7 +10,7 @@ const MenuItem = memo(({ name, price, details, volume }: {
         <div className="flex flex-col">
             <div className="flex items-baseline gap-2">
                 <span className="text-lg font-medium text-white group-hover:text-[#AF31F3] transition-colors whitespace-nowrap"
-                    style={{ fontFamily: 'Permanent Marker, cursive' }}>
+                >
                     {name}
                 </span>
 
