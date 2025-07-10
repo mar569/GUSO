@@ -17,7 +17,7 @@ const MapLocation: React.FC<{ address: string }> = ({ address }) => {
     }, []);
 
     const openInYandexMaps = () => {
-        // Указываем координаты для открытия конкретной точки
+
         const coordinates = '37.514359,55.704263';
         const yandexMapsUrl = `https://yandex.ru/maps/?ll=${coordinates}&z=19.24`;
         window.open(yandexMapsUrl, '_blank');
@@ -30,7 +30,7 @@ const MapLocation: React.FC<{ address: string }> = ({ address }) => {
 
     return (
         <div className="relative w-full max-w-[1920px] mx-auto bg-[#3D3D3D] flex flex-col">
-            {/* Заголовок и адрес */}
+
             <div className="w-full text-center py-6 px-4 md:py-8 ">
                 <h2 className="text-[#6EFF24] text-2xl md:text-3xl font-medium text-left">
                     Как до нас добраться?

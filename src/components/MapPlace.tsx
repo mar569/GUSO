@@ -74,7 +74,7 @@ const MapPlace: React.FC = React.memo(() => {
             >
                 <IoIosArrowRoundUp
                     className="text-white text-3xl transition-transform duration-300"
-                    size={38}
+                    size={37}
                 />
             </button>
         </div>
