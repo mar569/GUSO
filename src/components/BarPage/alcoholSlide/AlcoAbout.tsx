@@ -11,17 +11,24 @@ const AlcoAbout: React.FC = () => {
     const changeSlide = useCallback((direction: 'next' | 'prev' | number) => {
         setIsTransitioning(true);
 
-        setTimeout(() => {
-            if (typeof direction === 'number') {
-                setCurrentSlide(direction);
-            } else if (direction === 'next') {
-                setCurrentSlide(prev => (prev + 1) % Bar_SLIDES.length);
-            } else {
-                setCurrentSlide(prev => (prev - 1 + Bar_SLIDES.length) % Bar_SLIDES.length);
-            }
-            setIsTransitioning(false);
-        }, 300);
-    }, []);
+        let newSlide: number;
+
+        if (typeof direction === 'number') {
+            newSlide = direction;
+        } else if (direction === 'next') {
+            newSlide = (currentSlide + 1) % Bar_SLIDES.length;
+        } else {
+            newSlide = (currentSlide - 1 + Bar_SLIDES.length) % Bar_SLIDES.length;
+        }
+
+        // Update the current slide immediately
+        if (newSlide !== currentSlide) {
+            setCurrentSlide(newSlide);
+        }
+
+        // Reset the transition state immediately after changing the slide
+        setIsTransitioning(false);
+    }, [currentSlide]);
 
     return (
         <div className="relative w-full max-w-[1920px] mx-auto min-h-[852px] lg:h-[1080px]" id='about'>

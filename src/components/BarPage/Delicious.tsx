@@ -18,7 +18,7 @@ const Delicious: React.FC = () => {
         <div className="relative w-full max-w-[1920px] mx-auto" id="delicious">
             {/* Основной контейнер с фоновым изображением */}
             <div className="relative overflow-hidden min-h-[600px] sm:min-h-[700px] lg:min-h-[1080px]">
-                {/* Фон с размытием внутри ограниченного контейнера */}
+
                 <div
                     className="absolute inset-0 blur-[2px] opacity-40 sm:opacity-50"
                     style={{
@@ -28,19 +28,16 @@ const Delicious: React.FC = () => {
                         backgroundRepeat: 'no-repeat'
                     }}
                 />
-
                 <div className={`relative mx-auto max-w-[${APP_CONFIG.maxWidth}] px-2 sm:px-4 md:px-6 lg:px-8 h-full`}>
                     <div className="w-full h-full flex flex-col pt-8 sm:pt-10 pb-12 sm:pb-20">
-                        {/* Основной заголовок раздела */}
+
                         <div className="mb-4 sm:mb-6">
                             <h2 className={`text-[#6EFF24] transition-all text-[16px] sm:text-[18px] md:text-[20px] text-center sm:text-left`}>
                                 Delicious food
                             </h2>
                         </div>
-
-                        {/* Контентный блок */}
                         <div className="flex-1 flex flex-col-reverse lg:flex-row gap-4 sm:gap-6 lg:gap-8">
-                            {/* Текстовый блок */}
+
                             <div className="w-full lg:w-[55%] xl:w-[780px] flex flex-col justify-center">
                                 <h2 className={titleClasses}>
                                     пицца, сэндвичи, вок

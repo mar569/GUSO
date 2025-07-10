@@ -1,14 +1,9 @@
-
 import { Suspense, useCallback, useState } from 'react';
-
+import { APP_CONFIG, HookahSLIDES } from '../../constants/hookah.constants';
 import LoadingSpinner from '../Fps/LoadingSpinner/LoadingSpinner';
-import bgImage from '../../assets/hookah/BG.svg'
-import { APP_CONFIG, HookahSLIDES, } from '../../constants/hookah.constants';
 import HookahSlide from './HookahSlide';
 import HookahNavigate from './HookahNavigate';
-
-
-
+import bgImage from '../../assets/hookah/BG.svg';
 
 const PriceHookah: React.FC = () => {
     const [currentSlide, setCurrentSlide] = useState<number>(0);
@@ -17,25 +12,22 @@ const PriceHookah: React.FC = () => {
     const changeSlide = useCallback((direction: 'next' | 'prev' | number) => {
         setIsTransitioning(true);
 
-        setTimeout(() => {
-            let newSlide: number;
+        let newSlide: number;
 
-            if (typeof direction === 'number') {
-                newSlide = direction;
-            } else if (direction === 'next') {
-                newSlide = (currentSlide + 1) % HookahSLIDES.length;
-            } else {
-                newSlide = (currentSlide - 1 + HookahSLIDES.length) % HookahSLIDES.length;
-            }
+        if (typeof direction === 'number') {
+            newSlide = direction;
+        } else if (direction === 'next') {
+            newSlide = (currentSlide + 1) % HookahSLIDES.length;
+        } else {
+            newSlide = (currentSlide - 1 + HookahSLIDES.length) % HookahSLIDES.length;
+        }
 
+        if (newSlide !== currentSlide) {
+            setCurrentSlide(newSlide);
+        }
 
-            if (newSlide !== currentSlide) {
-                setCurrentSlide(newSlide);
-            }
-            setIsTransitioning(false);
-        }, 300);
+        setIsTransitioning(false);
     }, [currentSlide]);
-
 
     return (
         <div className="relative w-full max-w-[1920px] mx-auto min-h-[852px] ">
@@ -47,7 +39,6 @@ const PriceHookah: React.FC = () => {
                     backgroundPosition: 'center',
                 }}
             >
-
                 <Suspense fallback={
                     <div className="absolute inset-0 flex items-center justify-center">
                         <LoadingSpinner />
@@ -72,9 +63,8 @@ const PriceHookah: React.FC = () => {
                     onSelect={changeSlide}
                     primaryColor="#6EFF24" />
             </div>
-
         </div>
-    )
+    );
 }
 
 export default PriceHookah;

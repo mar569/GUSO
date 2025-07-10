@@ -3,6 +3,7 @@ import Slide from './Slide';
 import { SLIDES, APP_CONFIG } from '../../constants';
 import LoadingSpinner from './LoadingSpinner/LoadingSpinner';
 import bgImage from '../../assets/fps/FpsFon.svg';
+
 const PageAbout: React.FC = () => {
     const [currentSlide, setCurrentSlide] = useState<number>(0);
     const [isTransitioning, setIsTransitioning] = useState<boolean>(false);
@@ -10,16 +11,17 @@ const PageAbout: React.FC = () => {
     const changeSlide = useCallback((direction: 'next' | 'prev' | number) => {
         setIsTransitioning(true);
 
-        setTimeout(() => {
-            if (typeof direction === 'number') {
-                setCurrentSlide(direction);
-            } else if (direction === 'next') {
-                setCurrentSlide(prev => (prev + 1) % SLIDES.length);
-            } else {
-                setCurrentSlide(prev => (prev - 1 + SLIDES.length) % SLIDES.length);
-            }
-            setIsTransitioning(false);
-        }, 300);
+
+        if (typeof direction === 'number') {
+            setCurrentSlide(direction);
+        } else if (direction === 'next') {
+            setCurrentSlide(prev => (prev + 1) % SLIDES.length);
+        } else {
+            setCurrentSlide(prev => (prev - 1 + SLIDES.length) % SLIDES.length);
+        }
+
+
+        setIsTransitioning(false);
     }, []);
 
     return (
@@ -57,8 +59,6 @@ const PageAbout: React.FC = () => {
                         onSelect={(index) => changeSlide(index)}
                     />
                 </div>
-
-
             </div>
         </div>
     );

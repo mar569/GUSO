@@ -1,4 +1,3 @@
-
 import { Suspense, useCallback, useState } from 'react';
 import { APP_CONFIG, SLIDES } from '../../constants/playstation.constants';
 import PlaySlide from './PsSlide/PlaySlide';
@@ -13,22 +12,19 @@ const PrivateHome: React.FC = () => {
     const changeSlide = useCallback((direction: 'next' | 'prev' | number) => {
         setIsTransitioning(true);
 
-        setTimeout(() => {
-            let newSlide: number;
+        let newSlide: number;
+        if (typeof direction === 'number') {
+            newSlide = direction;
+        } else if (direction === 'next') {
+            newSlide = (currentSlide + 1) % SLIDES.length;
+        } else {
+            newSlide = (currentSlide - 1 + SLIDES.length) % SLIDES.length;
+        }
 
-            if (typeof direction === 'number') {
-                newSlide = direction;
-            } else if (direction === 'next') {
-                newSlide = (currentSlide + 1) % SLIDES.length;
-            } else {
-                newSlide = (currentSlide - 1 + SLIDES.length) % SLIDES.length;
-            }
-
-            if (newSlide !== currentSlide) {
-                setCurrentSlide(newSlide);
-            }
-            setIsTransitioning(false);
-        }, 300);
+        if (newSlide !== currentSlide) {
+            setCurrentSlide(newSlide);
+        }
+        setIsTransitioning(false);
     }, [currentSlide]);
 
     return (
@@ -68,8 +64,7 @@ const PrivateHome: React.FC = () => {
                 />
             </div>
         </div>
-    )
+    );
 }
 
 export default PrivateHome;
-

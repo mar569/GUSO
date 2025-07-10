@@ -11,7 +11,6 @@ const CoffeeAbout: React.FC = () => {
     const changeSlide = useCallback((direction: 'next' | 'prev' | number) => {
         setIsTransitioning(true);
 
-        // Проверяем, является ли направление числом (выбор конкретного слайда)
         if (typeof direction === 'number') {
             setCurrentSlide(direction);
         } else if (direction === 'next') {

@@ -1,4 +1,3 @@
-
 import { Suspense, useCallback, useState } from 'react';
 import { APP_CONFIG, SLIDES } from '../../constants/playstation.constants';
 import PlaySlide from './PsSlide/PlaySlide';
@@ -6,35 +5,27 @@ import PlayStationNavigate from './PlayStationSlide/PlayStationNavigate';
 import LoadingSpinner from '../Fps/LoadingSpinner/LoadingSpinner';
 import backgroundImages from './BackgroundImage';
 
-
-
-
 const PrivateHome: React.FC = () => {
     const [currentSlide, setCurrentSlide] = useState<number>(0);
     const [isTransitioning, setIsTransitioning] = useState<boolean>(false);
 
     const changeSlide = useCallback((direction: 'next' | 'prev' | number) => {
         setIsTransitioning(true);
+        let newSlide: number;
 
-        setTimeout(() => {
-            let newSlide: number;
+        if (typeof direction === 'number') {
+            newSlide = direction;
+        } else if (direction === 'next') {
+            newSlide = (currentSlide + 1) % SLIDES.length;
+        } else {
+            newSlide = (currentSlide - 1 + SLIDES.length) % SLIDES.length;
+        }
 
-            if (typeof direction === 'number') {
-                newSlide = direction;
-            } else if (direction === 'next') {
-                newSlide = (currentSlide + 1) % SLIDES.length;
-            } else {
-                newSlide = (currentSlide - 1 + SLIDES.length) % SLIDES.length;
-            }
-
-
-            if (newSlide !== currentSlide) {
-                setCurrentSlide(newSlide);
-            }
-            setIsTransitioning(false);
-        }, 300);
-    }, [currentSlide, SLIDES.length]);
-
+        if (newSlide !== currentSlide) {
+            setCurrentSlide(newSlide);
+        }
+        setIsTransitioning(false);
+    }, [currentSlide]);
 
     return (
         <div className="relative w-full max-w-[1920px] mx-auto ">
@@ -73,7 +64,7 @@ const PrivateHome: React.FC = () => {
                 />
             </div>
         </div>
-    )
+    );
 }
 
 export default PrivateHome;

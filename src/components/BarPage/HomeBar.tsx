@@ -6,6 +6,7 @@ import Day from "./Day"
 import Delicious from "./Delicious"
 import Food from "./Food"
 import CoktailsAbout from "./gosuCoktails/CoktailsAbout"
+import MenuBar from "./MenuBar"
 
 
 function HomeBar() {
@@ -19,6 +20,7 @@ function HomeBar() {
             <Delicious />
             <Cocktails />
             <CoktailsAbout />
+            <MenuBar />
         </>
 
     )
