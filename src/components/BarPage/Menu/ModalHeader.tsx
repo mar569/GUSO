@@ -11,7 +11,6 @@ const ModalHeader: React.FC = () => (
 
 
         <div className="flex items-center">
-
             <span
                 style={{
                     background: 'linear-gradient(28deg, rgba(252, 176, 69, 1) 5%, rgba(25, 33, 145, 1) 39%, rgba(94, 69, 27, 1) 67%, rgba(172, 42, 176, 1) 91%, rgba(126, 43, 181, 1) 100%)',
@@ -29,13 +28,12 @@ const ModalHeader: React.FC = () => (
 
         </div>
 
-
         <div className="flex items-center gap-8">
-            <IoIosStarHalf className="text-yellow-500 text-4xl rotate-12" />
+            <IoIosStarHalf className="text-yellow-500 text-2xl rotate-12" />
             <p className="text-sm text-center" style={{ fontFamily: "'Savate', sans-serif" }}>
                 Листай вниз
             </p>
-            <IoIosStarHalf className="text-pink-200 text-4xl rotate-45" />
+            <IoIosStarHalf className="text-pink-200 text-2xl rotate-45" />
         </div>
     </div>
 );
