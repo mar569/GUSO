@@ -90,46 +90,6 @@ h2 {
     background-color: #f9f9f9;
   }
 }
-.sctoll-to-top-btn {
-  position: fixed;
-  bottom: 70px;
-  right: 2vw;
-  z-index: 50;
-  width: 48px;
-  height: 48px;
-  display: flex;
-  background-color: #141630;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  border: 1px solid rgb(77, 76, 76);
-  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-  cursor: pointer;
-  opacity: 0;
-  transform: translateX(40px) scale(0.9);
-  box-shadow: none;
-}
-
-.sctoll-to-top-btn.showed {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  box-shadow: 0 4px 20px rgba(110, 255, 36, 0.3);
-}
-
-.sctoll-to-top-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 25px rgba(110, 255, 36, 0.5);
-}
-
-@media (max-width: 768px) {
-  .sctoll-to-top-btn {
-    bottom: 20px;
-    right: 20px;
-    width: 48px;
-    height: 48px;
-  }
-}
-
 .custom-scroll {
   scrollbar-width: thin;
   scrollbar-color: #005792 transparent;
@@ -180,5 +140,68 @@ h2 {
     margin-top: auto;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+  }
+}
+.scroll-to-top-button {
+  position: fixed;
+  bottom: 70px;
+  right: 4vw;
+  z-index: 80;
+  width: 43px;
+  height: 44px;
+  opacity: 0;
+  visibility: hidden;
+  cursor: pointer;
+  transform: translate(100%);
+  transition: 0.5s;
+}
+
+.scroll-to-top-button.showed {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0px);
+}
+
+/* Остальные стили остаются без изменений */
+
+.scroll-to-top-button::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 50%;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(80, 44, 199);
+  transition: 0.3s;
+  transform: scale(1.188);
+  opacity: 0.514997;
+}
+
+.scroll-to-top-button::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(114, 243, 118, 0.5);
+  border-radius: 50%;
+  animation: scaleUp 2s ease-in-out infinite normal none;
+}
+
+@keyframes scaleUp {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
   }
 }

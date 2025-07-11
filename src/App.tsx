@@ -3,19 +3,18 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { About } from "./components/AboutUs/About";
 import { Header } from './components/Header/Header';
 import { ClipLoader } from 'react-spinners';
-import Favorite from './components/Favorite';
-import Home from './components/Room/Home';
-import Atmosfere from './components/Atmosfere';
-import Discont from './components/Discont';
-import PriceHookah from './components/PriceHookah/Home';
-import Contact from './components/Contact';
-import Services from './components/ServicePage/Services';
-import MapPlace from './components/MapPlace';
+import PageAbout from './components/Fps/PageAbout';
 
-import HomeBar from './components/BarPage/HomeBar';
-import Bar from './components/Bar';
-
-const PageAbout = lazy(() => import('./components/Fps/PageAbout'));
+const Favorite = lazy(() => import('./components/Favorite'));
+const Home = lazy(() => import('./components/Room/Home'));
+const Atmosfere = lazy(() => import('./components/Atmosfere'));
+const Discont = lazy(() => import('./components/Discont'));
+const PriceHookah = lazy(() => import('./components/PriceHookah/Home'));
+const Contact = lazy(() => import('./components/Contact'));
+const Services = lazy(() => import('./components/ServicePage/Services'));
+const MapPlace = lazy(() => import('./components/Footer/MapPlace'));
+const HomeBar = lazy(() => import('./components/BarPage/HomeBar'));
+const Bar = lazy(() => import('./components/Bar'));
 
 function App() {
   const aboutRef = useRef<HTMLDivElement | null>(null);
@@ -28,7 +27,6 @@ function App() {
 
   return (
     <div className="bgI">
-
       <div
         style={{
           transition: 'opacity 0.3s ease',
@@ -57,7 +55,11 @@ function App() {
             </Suspense>
           </>
         } />
-        <Route path="/bar" element={<HomeBar />} />
+        <Route path="/bar" element={
+          <Suspense fallback={<ClipLoader color="#769e6b" size={60} />}>
+            <HomeBar />
+          </Suspense>
+        } />
       </Routes>
     </div>
   );

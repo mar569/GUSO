@@ -1,30 +1,33 @@
-import AlcoAbout from "./alcoholSlide/AlcoAbout";
-import BarPage from "./BarPage";
-import Cocktails from "./Cocktails";
-import CoffeeAbout from "./coffeSlide/CoffeeAbout";
-import Day from "./Day";
-import Delicious from "./Delicious";
-import Food from "./Food";
-import CoktailsAbout from "./gosuCoktails/CoktailsAbout";
-import MapLocation from "./MapLocation";
-import MenuBar from "./MenuBar";
+import { Suspense, lazy } from 'react';
+import LoadingSpinner from '../Fps/LoadingSpinner/LoadingSpinner';
+import BarPage from './BarPage';
+
+const AlcoAbout = lazy(() => import("./alcoholSlide/AlcoAbout"));
+const Cocktails = lazy(() => import("./Cocktails"));
+const CoffeeAbout = lazy(() => import("./coffeSlide/CoffeeAbout"));
+const Day = lazy(() => import("./Day"));
+const Delicious = lazy(() => import("./Delicious"));
+const Food = lazy(() => import("./Food"));
+const CoktailsAbout = lazy(() => import("./gosuCoktails/CoktailsAbout"));
+const MapLocation = lazy(() => import("./mapLocation/MapLocation"));
+const MenuBar = lazy(() => import("./MenuBar"));
 
 function HomeBar() {
     return (
-        <>
-            <BarPage />
-            <Day />
-            <CoffeeAbout />
-            <AlcoAbout />
-            <Food />
-            <Delicious />
-            <Cocktails />
-            <CoktailsAbout />
-            <MenuBar />
-            <MapLocation
-                address=""
-            />
-        </>
+        <Suspense fallback={<LoadingSpinner />}>
+            <>
+                <BarPage />
+                <Day />
+                <CoffeeAbout />
+                <AlcoAbout />
+                <Food />
+                <Delicious />
+                <Cocktails />
+                <CoktailsAbout />
+                <MenuBar />
+                <MapLocation />
+            </>
+        </Suspense>
     );
 }
 
