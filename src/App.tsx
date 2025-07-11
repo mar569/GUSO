@@ -1,20 +1,30 @@
-import React, { useRef, Suspense, lazy } from 'react';
+import React, { useRef, Suspense, } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { About } from "./components/AboutUs/About";
 import { Header } from './components/Header/Header';
 import { ClipLoader } from 'react-spinners';
 import PageAbout from './components/Fps/PageAbout';
+import Favorite from './components/Favorite';
+import Home from './components/Room/Home';
+import Bar from './components/Bar';
+import Atmosfere from './components/Atmosfere';
+import Discont from './components/Discont';
+import PriceHookah from './components/PriceHookah/Home';
+import Contact from './components/Contact';
+import Services from './components/ServicePage/Services';
+import MapPlace from './components/Footer/MapPlace';
+import HomeBar from './components/BarPage/HomeBar';
 
-const Favorite = lazy(() => import('./components/Favorite'));
-const Home = lazy(() => import('./components/Room/Home'));
-const Atmosfere = lazy(() => import('./components/Atmosfere'));
-const Discont = lazy(() => import('./components/Discont'));
-const PriceHookah = lazy(() => import('./components/PriceHookah/Home'));
-const Contact = lazy(() => import('./components/Contact'));
-const Services = lazy(() => import('./components/ServicePage/Services'));
-const MapPlace = lazy(() => import('./components/Footer/MapPlace'));
-const HomeBar = lazy(() => import('./components/BarPage/HomeBar'));
-const Bar = lazy(() => import('./components/Bar'));
+// const Favorite = lazy(() => import('./components/Favorite'));
+// const Home = lazy(() => import('./components/Room/Home'));
+// const Atmosfere = lazy(() => import('./components/Atmosfere'));
+// const Discont = lazy(() => import('./components/Discont'));
+// const PriceHookah = lazy(() => import('./components/PriceHookah/Home'));
+// const Contact = lazy(() => import('./components/Contact'));
+// const Services = lazy(() => import('./components/ServicePage/Services'));
+// const MapPlace = lazy(() => import('./components/Footer/MapPlace'));
+// const HomeBar = lazy(() => import('./components/BarPage/HomeBar'));
+// const Bar = lazy(() => import('./components/Bar'));
 
 function App() {
   const aboutRef = useRef<HTMLDivElement | null>(null);
