@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import mabBg from '../../assets/BarPage/mapBg.svg';
 import { IoIosArrowRoundUp } from 'react-icons/io';
+import mabBg from '@assets/BarPage/mapBg.svg';
+
 
 const MapLocation: React.FC<{ address: string }> = ({ address }) => {
     const [isVisible, setIsVisible] = useState(false);

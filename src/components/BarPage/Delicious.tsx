@@ -1,9 +1,10 @@
-import deliciousBg from '../../assets/BarPage/Pizza_Food.svg';
-import vok from '../../assets/BarPage/vok.svg';
+
 import { APP_CONFIG } from '../../constants/alco.constants';
 import { Suspense } from 'react';
 import LoadingSpinner from '../Fps/LoadingSpinner/LoadingSpinner';
 import LazyImage from '../Fps/LazyImage';
+import deliciousBg from '@assets/BarPage/Pizza_Food.svg';
+import vok from '@assets/BarPage/vok.svg';
 
 const Delicious: React.FC = () => {
     const titleClasses = `uppercase mb-2 sm:mb-4 text-[#6EFF24] transition-all duration-300 

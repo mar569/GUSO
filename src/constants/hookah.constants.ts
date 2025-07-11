@@ -1,9 +1,9 @@
 import type { HookahItem } from '../interfaces/slide.interface';
-import ds1 from '../assets/hookah/DCH_1.svg';
-import ds2 from '../assets/hookah/DCH_2.svg';
-import ds3 from '../assets/hookah/DCH_3.svg';
-import ds4 from '../assets/hookah/DCH_4.svg';
-import ds5 from '../assets/hookah/DCH_5.svg';
+import ds1 from '@assets/hookah/DCH_1.svg';
+import ds2 from '@assets/hookah/DCH_2.svg';
+import ds3 from '@assets/hookah/DCH_3.svg';
+import ds4 from '@assets/hookah/DCH_4.svg';
+import ds5 from '@assets/hookah/DCH_5.svg';
 
 export const HookahSLIDES: HookahItem[] = [
   {
@@ -26,13 +26,13 @@ export const HookahSLIDES: HookahItem[] = [
   },
   {
     id: 4,
-    description: 'бонус +30% от пополнения при регистрации нового аккаунта',
+    description: 'бонус +30% от пополнения при регистрации',
     images: [ds4],
     singleImage: true,
   },
   {
     id: 5,
-    description: 'подробности акции уточняйте у администратора',
+    description: 'подробности уточняйте у администратора',
     images: [ds5],
     singleImage: true,
   },

@@ -1,6 +1,6 @@
-import headImage from '../../assets/fon/head_2.svg';
-import { IoIosArrowRoundUp } from "react-icons/io";
 
+import { IoIosArrowRoundUp } from "react-icons/io";
+import headImage from '@assets/fon/head_2.svg';
 
 export function HeaderInfo() {
     return (

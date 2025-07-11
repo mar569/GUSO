@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import logo from '../../assets/BarPage/logo.svg';
-import barInfo from '../../assets/BarPage/BG.svg';
+import logo from '@assets/BarPage/logo.svg';
+import barInfo from '@assets/BarPage/BG.svg';
 
 
 const BarPage: React.FC = () => {

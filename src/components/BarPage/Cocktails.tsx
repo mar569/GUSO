@@ -1,4 +1,4 @@
-import cocktails from '../../assets/BarPage/Gosu_cocktail .svg'
+import cocktails from '@assets/BarPage/Gosu_cocktail .svg'
 
 const Cocktails: React.FC = () => {
     return (

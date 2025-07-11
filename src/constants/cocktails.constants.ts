@@ -1,7 +1,7 @@
 import type { SlideItem } from '../interfaces/slide.interface';
-import slide_1 from '../assets/BarPage/cocktails/cockt_1.svg';
-import slide_2 from '../assets/BarPage/cocktails/cockt_2.svg';
-import slide_3 from '../assets/BarPage/cocktails/cockt_3.svg';
+import slide_1 from '@assets/BarPage/cocktails/cockt_1.svg';
+import slide_2 from '@assets/BarPage/cocktails/cockt_2.svg';
+import slide_3 from '@assets/BarPage/cocktails/cockt_3.svg';
 
 export const COCKTAIL_SLIDES: SlideItem[] = [
   {

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import disBg from '../assets/discont.svg'
+import disBg from '@assets/discont.svg'
 
 const Discont: React.FC = () => {
 

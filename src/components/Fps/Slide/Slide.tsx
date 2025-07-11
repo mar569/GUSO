@@ -1,9 +1,10 @@
 import React, { Suspense } from 'react';
+import type { SlideProps } from '../../types/slideTypes';
+import { APP_CONFIG } from '../../../constants';
 import LazyImage from '../LazyImage';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
-import { APP_CONFIG } from '../../../constants';
 import SlideNavigation from '../SlideNavigation/SlideNavigation';
-import type { SlideProps } from '../../types/slideTypes';
+
 
 
 const Slide: React.FC<SlideProps> = ({

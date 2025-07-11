@@ -1,4 +1,4 @@
-import foodBg from '../../assets/BarPage/foodBg.svg'
+import foodBg from '@assets/BarPage/foodBg.svg'
 
 const Food: React.FC = () => {
     return (

@@ -1,4 +1,4 @@
-import bgMenu from '../../assets/BarPage/bgBarMenu.svg';
+import bgMenu from '@assets/BarPage/bgBarMenu.svg';
 import MenuModal from './Menu/MenuModal';
 
 const MenuBar: React.FC = () => {

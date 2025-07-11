@@ -1,4 +1,4 @@
-import day from '../../assets/BarPage/Day.svg';
+import day from '@assets/BarPage/Day.svg';
 
 const Day: React.FC = () => {
     return (

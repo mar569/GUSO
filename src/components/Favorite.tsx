@@ -1,4 +1,4 @@
-import favorite from '../assets/favorite/faboritePlace.svg'
+import favorite from '@assets/favorite/faboritePlace.svg'
 
 const Favorite: React.FC = () => {
 

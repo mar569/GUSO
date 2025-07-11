@@ -1,8 +1,9 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import mapPlace from '../assets/mapBg.svg';
-import logo from '../assets/fon/logo.png';
 import { IoIosArrowRoundUp } from "react-icons/io";
+import mapPlace from '../assets/mapBg.svg';
+import logo from '@assets/fon/logo.png';
+
 
 
 const MapPlace: React.FC = React.memo(() => {

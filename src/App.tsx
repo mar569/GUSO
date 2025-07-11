@@ -1,6 +1,8 @@
 import React, { useRef, Suspense, lazy } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { About } from "./components/AboutUs/About";
+import { Header } from './components/Header/Header';
+import { ClipLoader } from 'react-spinners';
 import Favorite from './components/Favorite';
 import Home from './components/Room/Home';
 import Atmosfere from './components/Atmosfere';
@@ -9,8 +11,7 @@ import PriceHookah from './components/PriceHookah/Home';
 import Contact from './components/Contact';
 import Services from './components/ServicePage/Services';
 import MapPlace from './components/MapPlace';
-import { Header } from './components/Header/Header';
-import { ClipLoader } from 'react-spinners';
+
 import HomeBar from './components/BarPage/HomeBar';
 import Bar from './components/Bar';
 

@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { MobileMenuButton } from './MobileMenuButton';
 import { MobileMenu } from './MobileMenu';
 import { HeaderInfo } from './HeaderInfo';
-import logo from '../../assets/fon/logo.png';
 import { DekstopNav } from './DekstopNav';
+import logo from '@assets/fon/logo.png';
 
 interface HeaderNavProps {
     scrollToAbout: () => void;
