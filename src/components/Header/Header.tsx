@@ -5,10 +5,12 @@ interface HeaderProps {
     scrollToFavorite: () => void;
 }
 
-export function Header({ scrollToAbout, scrollToFavorite }: HeaderProps) {
+const Header = ({ scrollToAbout, scrollToFavorite }: HeaderProps) => {
     return (
         <>
             <HeaderNav scrollToAbout={scrollToAbout} scrollToFavorite={scrollToFavorite} />
         </>
     );
 }
+
+export default Header;

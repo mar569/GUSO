@@ -1,10 +1,8 @@
-import React, { useRef, Suspense, } from 'react';
+import React, { useRef, Suspense, lazy, } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { About } from "./components/AboutUs/About";
-import { Header } from './components/Header/Header';
 import { ClipLoader } from 'react-spinners';
 import PageAbout from './components/Fps/PageAbout';
-import Favorite from './components/Favorite';
 import Home from './components/Room/Home';
 import Bar from './components/Bar';
 import Atmosfere from './components/Atmosfere';
@@ -15,7 +13,8 @@ import Services from './components/ServicePage/Services';
 import MapPlace from './components/Footer/MapPlace';
 import HomeBar from './components/BarPage/HomeBar';
 
-// const Favorite = lazy(() => import('./components/Favorite'));
+const Header = lazy(() => import('./components/Header/Header'));
+const Favorite = lazy(() => import('./components/Favorite'));
 // const Home = lazy(() => import('./components/Room/Home'));
 // const Atmosfere = lazy(() => import('./components/Atmosfere'));
 // const Discont = lazy(() => import('./components/Discont'));
@@ -37,16 +36,19 @@ function App() {
 
   return (
     <div className="bgI">
-      <div
-        style={{
-          transition: 'opacity 0.3s ease',
-          opacity: location.pathname === '/bar' ? 0 : 1,
-          height: location.pathname === '/bar' ? 0 : 'auto',
-          overflow: 'hidden'
-        }}
-      >
-        <Header scrollToAbout={() => scrollToRef(aboutRef)} scrollToFavorite={() => scrollToRef(favoriteRef)} />
-      </div>
+      <Suspense fallback={<ClipLoader color="#769e6b" size={60} />}>
+        <div
+          style={{
+            transition: 'opacity 0.3s ease',
+            opacity: location.pathname === '/bar' ? 0 : 1,
+            height: location.pathname === '/bar' ? 0 : 'auto',
+            overflow: 'hidden'
+          }}
+        >
+          <Header scrollToAbout={() => scrollToRef(aboutRef)} scrollToFavorite={() => scrollToRef(favoriteRef)} />
+        </div>
+      </Suspense>
+
       <Routes>
         <Route path="/" element={
           <>
@@ -54,15 +56,16 @@ function App() {
             <Suspense fallback={<ClipLoader color="#769e6b" size={60} />}>
               <PageAbout />
               <div ref={favoriteRef}><Favorite /></div>
-              <Home />
-              <Bar />
-              <Atmosfere />
-              <Discont />
-              <PriceHookah />
-              <Contact />
-              <Services />
-              <MapPlace />
             </Suspense>
+            <Home />
+            <Bar />
+            <Atmosfere />
+            <Discont />
+            <PriceHookah />
+            <Contact />
+            <Services />
+            <MapPlace />
+
           </>
         } />
         <Route path="/bar" element={
