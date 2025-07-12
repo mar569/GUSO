@@ -1,16 +1,16 @@
-import { AnimatePresence, easeInOut, motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const menuVariants = {
     open: {
         opacity: 1,
         y: 0,
-        transition: { duration: 0.5, ease: easeInOut, delay: 0.2 }
+        transition: { duration: 0.5 }
     },
     closed: {
         opacity: 0,
         y: -20,
-        transition: { duration: 0.5, ease: easeInOut }
+        transition: { duration: 0.5 }
     }
 }
 
@@ -18,9 +18,11 @@ interface IMobileMenuProps {
     isOpen: boolean;
     scrollToAbout: () => void;
     scrollToFavorite: () => void;
+    scrollToDiscount: () => void;
+    onOpenPhoneModal: () => void; // Добавлено для открытия модального окна
 }
 
-export const MobileMenu: React.FC<IMobileMenuProps> = ({ isOpen, scrollToAbout, scrollToFavorite }) => {
+export const MobileMenu: React.FC<IMobileMenuProps> = ({ isOpen, scrollToAbout, scrollToFavorite, scrollToDiscount, onOpenPhoneModal }) => {
     return (
         <AnimatePresence>
             {isOpen && (
@@ -31,33 +33,31 @@ export const MobileMenu: React.FC<IMobileMenuProps> = ({ isOpen, scrollToAbout, 
                     variants={menuVariants}
                     className="md:hidden absolute top-10 left-0 w-full shadow-lg z-50"
                 >
-                    <ul className="flex flex-col text-center py-2"
-                        style={{ fontFamily: 'Poppins' }}>
+                    <ul className="flex flex-col text-center py-2" style={{ fontFamily: 'Poppins' }}>
                         <li className="py-3 hover:bg-green-500" onClick={scrollToAbout}>
-                            <a href="#" className="block">О нас</a>
+                            О нас
                         </li>
                         <li className="py-3 hover:bg-green-500" onClick={scrollToFavorite}>
-                            <a href="#" className="block">Твои любимые места</a>
+                            Твои любимые места
                         </li>
                         <li className="py-3 hover:bg-green-500">
-                            <Link
-                                to="/bar"
-
-                            >
-                                Bar&Hookah
+                            <Link to="/bar">Bar&Hookah</Link>
+                        </li>
+                        <li className="py-3 hover:bg-green-500" onClick={scrollToDiscount}>
+                            Акции
+                        </li>
+                        <li className="py-3 hover:bg-green-500">
+                            <Link to="/prices">
+                                Наши цены
                             </Link>
                         </li>
-                        <li className="py-3 hover:bg-green-500">
-                            <a href="#" className="block">Акции</a>
-                        </li>
-                        <li className="py-3 hover:bg-green-500">
-                            <a href="#" className="block">Наши цены</a>
-                        </li>
-                        <li className="p-2">
-                            <button className="bg-gradient-to-b from-[#8a7c92] to-[#436237] text-white py-2 px-4 rounded-xl cursor-pointer hover:text-black hover:bg-[#505050] duration-500">
-                                Связаться с нами
-                            </button>
-                        </li>
+                        <button className="py-3 rounded-2xl bg-[#6A1ECA] opacity-90 w-full max-w-[200px] mx-auto "
+                            style={{ fontFamily: 'Poppins', boxShadow: '10px 50px 30px rgba(109, 6, 153, 0.5)' }}
+                            onClick={onOpenPhoneModal}
+                        >
+                            Связаться с нами
+                        </button>
+
                     </ul>
                 </motion.div>
             )}

@@ -16,7 +16,7 @@ const CocktailSlide: React.FC<SlideProps> = ({
 }) => {
     const titleClasses = `uppercase mb-4 transition-all duration-300 ${isTransitioning ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'} ${slide.isSpecialStyle
         ? `text-[${APP_CONFIG.primaryColor}] w-full max-w-[690px] h-full max-h-[249px] text-[24px] sm:text-[30px] md:text-[64px]`
-        : 'text-white text-[20px] sm:text-[64px]'
+        : 'text-white text-[20px] sm:text-[46px]'
         }`;
 
     const descClasses = `uppercase transition-all duration-300 ${isTransitioning ? 'opacity-0 -translate-y-4' : 'opacity-100 translate-y-0'} ${slide.isSpecialStyle

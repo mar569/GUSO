@@ -1,27 +1,28 @@
-import { useCallback, useEffect, useState, useRef } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { IoIosArrowRoundUp } from "react-icons/io";
 
 const ButtonScroll = () => {
     const [isVisible, setIsVisible] = useState(false);
-    const [isScrolling, setIsScrolling] = useState(false);
-    const scrollTimeout = useRef<number | null>(null);
+    const [lastScrollY, setLastScrollY] = useState(0);
+    const [isScrollingUp, setIsScrollingUp] = useState(false);
 
     const toggleVisibility = useCallback(() => {
         setIsVisible(window.pageYOffset > window.innerHeight / 2);
     }, []);
 
     const handleScroll = useCallback(() => {
-        setIsScrolling(true);
-        toggleVisibility();
+        const currentScrollY = window.pageYOffset;
 
-        if (scrollTimeout.current) {
-            clearTimeout(scrollTimeout.current);
+        // Определяем, прокручивается ли вверх или вниз
+        if (currentScrollY < lastScrollY) {
+            setIsScrollingUp(true);
+        } else {
+            setIsScrollingUp(false);
         }
 
-        scrollTimeout.current = window.setTimeout(() => {
-            setIsScrolling(false);
-        }, 1000);
-    }, [toggleVisibility]);
+        setLastScrollY(currentScrollY);
+        toggleVisibility();
+    }, [lastScrollY, toggleVisibility]);
 
     const scrollToTop = useCallback(() => {
         window.scrollTo({
@@ -31,23 +32,28 @@ const ButtonScroll = () => {
     }, []);
 
     useEffect(() => {
-        const debouncedHandleScroll = () => {
-            handleScroll();
+        let ticking = false;
+
+        const onScroll = () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    handleScroll();
+                    ticking = false;
+                });
+                ticking = true;
+            }
         };
 
-        window.addEventListener('scroll', debouncedHandleScroll);
+        window.addEventListener('scroll', onScroll);
         return () => {
-            window.removeEventListener('scroll', debouncedHandleScroll);
-            if (scrollTimeout.current) {
-                clearTimeout(scrollTimeout.current);
-            }
+            window.removeEventListener('scroll', onScroll);
         };
     }, [handleScroll]);
 
     return (
         <button
             onClick={scrollToTop}
-            className={`scroll-to-top-button ${isVisible && !isScrolling ? 'showed' : ''}`}
+            className={`scroll-to-top-button ${isVisible && !isScrollingUp ? 'showed' : ''}`}
             aria-label="Наверх"
             type="button"
         >

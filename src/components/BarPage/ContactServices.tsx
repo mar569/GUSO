@@ -1,5 +1,5 @@
-import vk from '@assets/BarPage/vk.svg';
 import { IoIosArrowRoundUp } from 'react-icons/io';
+import vk from '@assets/BarPage/vk.svg';
 import whts from '@assets/BarPage/whats.svg';
 import insta from '@assets/BarPage/instagram.svg';
 

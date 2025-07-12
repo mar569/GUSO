@@ -1,6 +1,7 @@
 
-import { IoIosArrowRoundUp } from "react-icons/io";
+
 import headImage from '@assets/fon/head_2.svg';
+import ButtonAccount from './ButtonAccount';
 
 export function HeaderInfo() {
     return (
@@ -22,11 +23,7 @@ export function HeaderInfo() {
                     >
                         Больше, чем просто компьютерный клуб
                     </h2>
-                    <button className="bg-gradient-to-b from-[#8a7c92] to-[#436237] flex  text-white py-2 px-6 rounded-xl cursor-pointer hover:text-black hover:bg-[#505050] duration-500 w-fit"
-                        style={{ fontFamily: 'Poppins' }}>
-                        Войти в аккаунт
-                        <IoIosArrowRoundUp className="ml-2 rotate-45" size={24} />
-                    </button>
+                    <ButtonAccount />
                 </div>
             </div>
         </div>

@@ -2,7 +2,7 @@
 import { IoIosStarHalf } from "react-icons/io";
 
 const ModalHeader: React.FC = () => (
-    <div className="bg-black text-white p-5 flex flex-col items-center">
+    <div className="bg-black rounded-t-lg text-white p-5 flex flex-col items-center">
         <h2 className="text-2xl md:text-3xl font-bold w-full flex justify-between">
             <span className="text-sm font-light text-blue-100 text-right">
                 Больше чем просто компьютерный клуб

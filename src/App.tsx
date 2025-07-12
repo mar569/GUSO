@@ -1,71 +1,66 @@
-import React, { useRef, Suspense, lazy, } from 'react';
+import React, { useRef, Suspense, lazy } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { About } from "./components/AboutUs/About";
 import { ClipLoader } from 'react-spinners';
 import PageAbout from './components/Fps/PageAbout';
-import Home from './components/Room/Home';
-import Bar from './components/Bar';
-import Atmosfere from './components/Atmosfere';
-import Discont from './components/Discont';
-import PriceHookah from './components/PriceHookah/Home';
-import Contact from './components/Contact';
-import Services from './components/ServicePage/Services';
-import MapPlace from './components/Footer/MapPlace';
-import HomeBar from './components/BarPage/HomeBar';
+import Header from './components/Header/Header';
+import Favorite from './components/Favorite';
+import PriceZoon from './components/PricePageZoon/PriceZoon';
 
-const Header = lazy(() => import('./components/Header/Header'));
-const Favorite = lazy(() => import('./components/Favorite'));
-// const Home = lazy(() => import('./components/Room/Home'));
-// const Atmosfere = lazy(() => import('./components/Atmosfere'));
-// const Discont = lazy(() => import('./components/Discont'));
-// const PriceHookah = lazy(() => import('./components/PriceHookah/Home'));
-// const Contact = lazy(() => import('./components/Contact'));
-// const Services = lazy(() => import('./components/ServicePage/Services'));
-// const MapPlace = lazy(() => import('./components/Footer/MapPlace'));
-// const HomeBar = lazy(() => import('./components/BarPage/HomeBar'));
-// const Bar = lazy(() => import('./components/Bar'));
+const Home = lazy(() => import('./components/Room/Home'));
+const Atmosfere = lazy(() => import('./components/Atmosfere'));
+const Discont = lazy(() => import('./components/Discont'));
+const PriceHookah = lazy(() => import('./components/PriceHookah/Home'));
+const Contact = lazy(() => import('./components/Contact'));
+const Services = lazy(() => import('./components/ServicePage/Services'));
+const MapPlace = lazy(() => import('./components/Footer/MapPlace'));
+const HomeBar = lazy(() => import('./components/BarPage/HomeBar'));
+const Bar = lazy(() => import('./components/Bar'));
 
 function App() {
   const aboutRef = useRef<HTMLDivElement | null>(null);
   const favoriteRef = useRef<HTMLDivElement | null>(null);
+  const discontRef = useRef<HTMLDivElement | null>(null);
   const location = useLocation();
 
   const scrollToRef = (ref: React.RefObject<HTMLDivElement | null>) => {
-    ref.current?.scrollIntoView({ behavior: 'smooth' });
+    if (ref.current) {
+      ref.current.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
     <div className="bgI">
-      <Suspense fallback={<ClipLoader color="#769e6b" size={60} />}>
-        <div
-          style={{
-            transition: 'opacity 0.3s ease',
-            opacity: location.pathname === '/bar' ? 0 : 1,
-            height: location.pathname === '/bar' ? 0 : 'auto',
-            overflow: 'hidden'
-          }}
-        >
-          <Header scrollToAbout={() => scrollToRef(aboutRef)} scrollToFavorite={() => scrollToRef(favoriteRef)} />
-        </div>
-      </Suspense>
-
+      <div
+        style={{
+          transition: 'opacity 0.3s ease',
+          opacity: location.pathname === '/bar' || location.pathname === '/prices' ? 0 : 1,
+          height: location.pathname === '/bar' || location.pathname === '/prices' ? 0 : 'auto',
+          overflow: 'hidden'
+        }}
+      >
+        <Header
+          scrollToAbout={() => scrollToRef(aboutRef)}
+          scrollToFavorite={() => scrollToRef(favoriteRef)}
+          scrollToDiscount={() => scrollToRef(discontRef)}
+        />
+      </div>
       <Routes>
         <Route path="/" element={
           <>
             <div ref={aboutRef}><About /></div>
+            <PageAbout />
+            <div ref={favoriteRef}><Favorite /></div>
             <Suspense fallback={<ClipLoader color="#769e6b" size={60} />}>
-              <PageAbout />
-              <div ref={favoriteRef}><Favorite /></div>
+              <Home />
+              <Bar />
+              <Atmosfere />
+              <Discont />
+              <div ref={discontRef}><PriceHookah /></div>
+              <Contact />
+              <Services />
+              <MapPlace />
             </Suspense>
-            <Home />
-            <Bar />
-            <Atmosfere />
-            <Discont />
-            <PriceHookah />
-            <Contact />
-            <Services />
-            <MapPlace />
-
           </>
         } />
         <Route path="/bar" element={
@@ -73,7 +68,13 @@ function App() {
             <HomeBar />
           </Suspense>
         } />
+        <Route path="/prices" element={
+          <Suspense fallback={<ClipLoader color="#769e6b" size={60} />}>
+            <PriceZoon />
+          </Suspense>
+        } />
       </Routes>
+
     </div>
   );
 }

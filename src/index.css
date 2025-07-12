@@ -51,6 +51,15 @@ h2 {
   min-height: 100vh;
 }
 
+.price {
+  background: url(assets/fon/head_1.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
 .container {
   max-width: 1920px;
   width: 100%;
@@ -161,8 +170,6 @@ h2 {
   visibility: visible;
   transform: translate(0px);
 }
-
-/* Остальные стили остаются без изменений */
 
 .scroll-to-top-button::before {
   content: '';

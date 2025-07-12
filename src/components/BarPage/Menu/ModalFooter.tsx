@@ -1,7 +1,7 @@
 import { memo } from 'react';
 
 const ModalFooter = ({ onClose }: { onClose: () => void }) => (
-    <div className="bg-black p-4 border-t flex flex-col sm:flex-row justify-between items-center">
+    <div className="bg-black rounded-b-lg p-4 border-t flex flex-col sm:flex-row justify-between items-center">
         <div className="font-light text-white text-sm mb-2 sm:mb-0">
             Все цены указаны в рублях с учетом НДС
         </div>

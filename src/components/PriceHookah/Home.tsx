@@ -33,7 +33,7 @@ const PriceHookah: React.FC = () => {
     return (
         <div className="relative w-full max-w-[1920px] mx-auto min-h-[852px] ">
             <div
-                className={`absolute inset-0 transition-opacity duration-500 ${isTransitioning ? 'opacity-70' : 'opacity-90'}`}
+                className={`absolute inset-0 transition-opacity duration-500 ${isTransitioning ? 'opacity-90' : 'opacity-100'}`}
                 style={{
                     backgroundImage: `url(${bgImage})`,
                     backgroundSize: 'cover',
@@ -48,7 +48,7 @@ const PriceHookah: React.FC = () => {
                 </Suspense>
             </div>
 
-            <div className={`relative mx-auto max-w-[${APP_CONFIG.maxWidth}] px-2 sm:px-8 w-full flex flex-col pt-10 pb-20 transition-opacity duration-300 ${isTransitioning ? 'opacity-90' : 'opacity-100'}`}>
+            <div id='discount' className={`relative mx-auto max-w-[${APP_CONFIG.maxWidth}] px-2 sm:px-8 w-full flex flex-col pt-10 pb-20 transition-opacity duration-300 ${isTransitioning ? 'opacity-90' : 'opacity-100'}`}>
                 <h2 className={`transform transition-all duration-500 ${isTransitioning ? 'translate-x-10' : 'translate-x-0'} text-[18px] text-[#6EFF24] text-center md:text-left`}>
                     Акции
                 </h2>

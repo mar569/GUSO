@@ -4,14 +4,17 @@ import { MobileMenu } from './MobileMenu';
 import { HeaderInfo } from './HeaderInfo';
 import { DekstopNav } from './DekstopNav';
 import logo from '@assets/fon/logo.png';
+import Phone from './Phone';
 
 interface HeaderNavProps {
     scrollToAbout: () => void;
     scrollToFavorite: () => void;
+    scrollToDiscount: () => void;
 }
 
-export const HeaderNav: React.FC<HeaderNavProps> = ({ scrollToAbout, scrollToFavorite }) => {
+export const HeaderNav: React.FC<HeaderNavProps> = ({ scrollToAbout, scrollToFavorite, scrollToDiscount }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isPhoneModalOpen, setIsPhoneModalOpen] = useState(false);
 
     const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 
@@ -24,18 +27,27 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({ scrollToAbout, scrollToFav
                     </a>
 
                     <MobileMenuButton isOpen={isMenuOpen} toggleMenu={toggleMenu} />
-                    <DekstopNav scrollToAbout={scrollToAbout} scrollToFavorite={scrollToFavorite} />
+                    <DekstopNav scrollToAbout={scrollToAbout} scrollToFavorite={scrollToFavorite} scrollToDiscount={scrollToDiscount} />
                     <div className="hidden md:flex items-center">
-                        <button className="bg-gradient-to-b from-[#8a7c92] to-[#436237] flex flex-1 text-white py-2 px-6 rounded-xl cursor-pointer hover:text-black hover:bg-[#505050] duration-500"
+                        <button
+                            onClick={() => setIsPhoneModalOpen(true)}
+                            className="bg-gradient-to-b from-[#8a7c92] to-[#436237] flex flex-1 text-white py-2 px-6 rounded-xl cursor-pointer hover:text-black hover:bg-[#505050] duration-500"
                             style={{ fontFamily: 'Poppins' }}>
                             Связаться с нами
                         </button>
                     </div>
                 </div>
 
-                <MobileMenu isOpen={isMenuOpen} scrollToAbout={scrollToAbout} scrollToFavorite={scrollToFavorite} />
+                <MobileMenu
+                    isOpen={isMenuOpen}
+                    scrollToAbout={scrollToAbout}
+                    scrollToFavorite={scrollToFavorite}
+                    scrollToDiscount={scrollToDiscount}
+                    onOpenPhoneModal={() => setIsPhoneModalOpen(true)}
+                />
                 <HeaderInfo />
             </div>
+            <Phone isOpen={isPhoneModalOpen} onClose={() => setIsPhoneModalOpen(false)} selectedTime={null} />
         </header>
     );
 };

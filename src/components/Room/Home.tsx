@@ -30,7 +30,7 @@ const PrivateHome: React.FC = () => {
     return (
         <div className="relative w-full max-w-[1920px] mx-auto min-h-[852px] lg:h-[1080px]" id='favoritePlaces'>
             <div
-                className={`absolute inset-0 transition-opacity duration-500 ${isTransitioning ? 'opacity-70' : 'opacity-90'}`}
+                className={`absolute inset-0 transition-opacity duration-500 ${isTransitioning ? 'opacity-90' : 'opacity-100'}`}
                 style={{
                     backgroundImage: `url(${backgroundImages[currentSlide]})`,
                     backgroundSize: 'cover',

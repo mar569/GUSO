@@ -42,7 +42,7 @@ const MapInfo: React.FC<{ address: string }> = ({ address }) => {
                     <IoIosArrowRoundUp className="ml-2 rotate-45" size={34} />
                 </button>
             </div>
-            <ToastContainer /> {/* Добавьте контейнер для уведомлений */}
+            <ToastContainer />
         </div>
     );
 }
