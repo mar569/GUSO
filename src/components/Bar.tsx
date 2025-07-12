@@ -1,4 +1,4 @@
-import barBg from '@assets/Bar.svg';
+import barBg from '../assets/Bar.svg';
 
 const Bar: React.FC = () => {
 

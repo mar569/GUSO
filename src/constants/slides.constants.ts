@@ -1,18 +1,18 @@
 import type { SlideItem } from '../interfaces/slide.interface';
-import fps1 from '@assets/fps/fps_1.svg';
-import fps2_1 from '@assets/fps/Group 1.svg';
-import fps2_2 from '@assets/fps/Group 2.svg';
-import fps2_4 from '@assets/fps/Group 4.svg';
-import fps3_2 from '@assets/fps/Group 6.svg';
-import fps3_3 from '@assets/fps/Group 7.svg';
-import fps3_4 from '@assets/fps/Group 8.svg';
-import fps4_1 from '@assets/fps/Group 9.svg';
-import fps4_2 from '@assets/fps/Group 10.svg';
-import fps4_3 from '@assets/fps/Group 11.svg';
-import fps4_4 from '@assets/fps/Group 12.svg';
-import fps5_2 from '@assets/fps/Group 14.svg';
-import fps5_3 from '@assets/fps/Group 17.svg';
-import fps5_4 from '@assets/fps/Group 8.svg';
+import fps1 from '../assets/fps/fps_1.svg';
+import fps2_1 from '../assets/fps/Group 1.svg';
+import fps2_2 from '../assets/fps/Group 2.svg';
+import fps2_4 from '../assets/fps/Group 4.svg';
+import fps3_2 from '../assets/fps/Group 6.svg';
+import fps3_3 from '../assets/fps/Group 7.svg';
+import fps3_4 from '../assets/fps/Group 8.svg';
+import fps4_1 from '../assets/fps/Group 9.svg';
+import fps4_2 from '../assets/fps/Group 10.svg';
+import fps4_3 from '../assets/fps/Group 11.svg';
+import fps4_4 from '../assets/fps/Group 12.svg';
+import fps5_2 from '../assets/fps/Group 14.svg';
+import fps5_3 from '../assets/fps/Group 17.svg';
+import fps5_4 from '../assets/fps/Group 8.svg';
 
 export const SLIDES: SlideItem[] = [
   {

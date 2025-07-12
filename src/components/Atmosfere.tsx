@@ -1,12 +1,12 @@
 import { GoArrowUpRight } from "react-icons/go";
-import atmosfereBg from '@assets/atmosfere/atmsfereBg.svg';
-import bg1 from '@assets/atmosfere/D1.svg';
-import bg2 from '@assets/atmosfere/D2.svg';
-import bg3 from '@assets/atmosfere/D3.svg';
-import bg4 from '@assets/atmosfere/D4.svg';
-import bg5 from '@assets/atmosfere/D5.svg';
-import bg6 from '@assets/atmosfere/D6.svg';
-import bg7 from '@assets/atmosfere/D7.svg';
+import atmosfereBg from '../assets/atmosfere/atmsfereBg.svg';
+import bg1 from '../assets/atmosfere/D1.svg';
+import bg2 from '../assets/atmosfere/D2.svg';
+import bg3 from '../assets/atmosfere/D3.svg';
+import bg4 from '../assets/atmosfere/D4.svg';
+import bg5 from '../assets/atmosfere/D5.svg';
+import bg6 from '../assets/atmosfere/D6.svg';
+import bg7 from '../assets/atmosfere/D7.svg';
 
 
 const Atmosfere: React.FC = () => {

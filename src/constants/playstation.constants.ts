@@ -1,17 +1,17 @@
 import type { PlayStationItem } from '../interfaces/slide.interface';
-import ps from '@assets/privatePage/SlideBg.svg';
-import ps1_1 from '@assets/privatePage/ps1_1.svg';
-import ps1_2 from '@assets/privatePage/ps1_2.svg';
-import ps1_3 from '@assets/privatePage/ps1_3.svg';
-import ps1_4 from '@assets/privatePage/ps1_4.svg';
-import ps3_1 from '@assets/privatePage/ps3_1.svg';
-import ps3_2 from '@assets/privatePage/ps3_2.svg';
-import ps3_3 from '@assets/privatePage/ps3_3.svg';
-import ps3_4 from '@assets/privatePage/ps3_4.svg';
-import ps4_1 from '@assets/privatePage/ps4_1.svg';
-import ps4_2 from '@assets/privatePage/ps4_2.svg';
-import ps4_3 from '@assets/privatePage/ps4_3.svg';
-import ps4_4 from '@assets/privatePage/ps4_4.svg';
+import ps from '../assets/privatePage/SlideBg.svg';
+import ps1_1 from '../assets/privatePage/ps1_1.svg';
+import ps1_2 from '../assets/privatePage/ps1_2.svg';
+import ps1_3 from '../assets/privatePage/ps1_3.svg';
+import ps1_4 from '../assets/privatePage/ps1_4.svg';
+import ps3_1 from '../assets/privatePage/ps3_1.svg';
+import ps3_2 from '../assets/privatePage/ps3_2.svg';
+import ps3_3 from '../assets/privatePage/ps3_3.svg';
+import ps3_4 from '../assets/privatePage/ps3_4.svg';
+import ps4_1 from '../assets/privatePage/ps4_1.svg';
+import ps4_2 from '../assets/privatePage/ps4_2.svg';
+import ps4_3 from '../assets/privatePage/ps4_3.svg';
+import ps4_4 from '../assets/privatePage/ps4_4.svg';
 
 export const SLIDES: PlayStationItem[] = [
   {

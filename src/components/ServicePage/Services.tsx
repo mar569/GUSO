@@ -1,9 +1,9 @@
 import React from 'react';
-import servicesBg from '@assets/ServicesBg.svg';
-import vk from '@assets/vk.svg';
-import whts from '@assets/whts.svg';
-import tg from '@assets/tg.svg';
-import contBg from '@assets/hookah/DCH_5.svg';
+import servicesBg from '../../assets/ServicesBg.svg';
+import vk from '../../assets/vk.svg';
+import whts from '../../assets/whts.svg';
+import tg from '../../assets/tg.svg';
+import contBg from '../../assets/hookah/DCH_5.svg';
 
 const Services: React.FC = () => {
     return (

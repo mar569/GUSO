@@ -1,6 +1,6 @@
 
 import React from 'react';
-import contactBg from '@assets/Contact.bg.svg';
+import contactBg from '../assets/Contact.bg.svg';
 
 const Contact: React.FC = () => {
 

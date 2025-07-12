@@ -1,9 +1,9 @@
 import type { HookahItem } from '../interfaces/slide.interface';
-import ds1 from '@assets/hookah/DCH_1.svg';
-import ds2 from '@assets/hookah/DCH_2.svg';
-import ds3 from '@assets/hookah/DCH_3.svg';
-import ds4 from '@assets/hookah/DCH_4.svg';
-import ds5 from '@assets/hookah/DCH_5.svg';
+import ds1 from '../assets/hookah/DCH_1.svg';
+import ds2 from '../assets/hookah/DCH_2.svg';
+import ds3 from '../assets/hookah/DCH_3.svg';
+import ds4 from '../assets/hookah/DCH_4.svg';
+import ds5 from '../assets/hookah/DCH_5.svg';
 
 export const HookahSLIDES: HookahItem[] = [
   {

@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import vk from '@assets/BarPage/vk.svg';
-import whts from '@assets/BarPage/whats.svg';
-import insta from '@assets/BarPage/instagram.svg';
+import vk from '../../assets/BarPage/vk.svg';
+import whts from '../../assets/BarPage/whats.svg';
+import insta from '../../assets/BarPage/instagram.svg';
 
 interface PhoneModalProps {
     isOpen: boolean;

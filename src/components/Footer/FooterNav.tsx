@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import logo from '@assets/fon/logo.png';
+import logo from '../../assets/fon/logo.png';
 
 const FooterNav = () => {
     return (

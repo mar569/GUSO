@@ -2,7 +2,7 @@ import { useState, useCallback, Suspense, memo, lazy } from 'react';
 
 import { SLIDES, APP_CONFIG } from '../../constants';
 import LoadingSpinner from './LoadingSpinner/LoadingSpinner';
-import bgImage from '@assets/fps/FpsFon.svg';
+import bgImage from '../../assets/fps/FpsFon.svg';
 
 const Slide = lazy(() => import('./Slide'));
 

@@ -1,6 +1,6 @@
 
 
-import headImage from '@assets/fon/head_2.svg';
+import headImage from '../../assets/fon/head_2.svg';
 import ButtonAccount from './ButtonAccount';
 
 export function HeaderInfo() {

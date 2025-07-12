@@ -3,7 +3,7 @@ import { MobileMenuButton } from './MobileMenuButton';
 import { MobileMenu } from './MobileMenu';
 import { HeaderInfo } from './HeaderInfo';
 import { DekstopNav } from './DekstopNav';
-import logo from '@assets/fon/logo.png';
+import logo from '../../assets/fon/logo.png';
 import Phone from './Phone';
 
 interface HeaderNavProps {

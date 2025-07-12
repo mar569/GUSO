@@ -1,7 +1,7 @@
 import { lazy, Suspense, useCallback, useState } from 'react';
 import { APP_CONFIG, HookahSLIDES } from '../../constants/hookah.constants';
 import LoadingSpinner from '../Fps/LoadingSpinner/LoadingSpinner';
-import bgImage from '@assets/hookah/BG.svg';
+import bgImage from '../../assets/hookah/BG.svg';
 
 const HookahSlide = lazy(() => import('./HookahSlide'));
 const HookahNavigate = lazy(() => import('./HookahNavigate'));

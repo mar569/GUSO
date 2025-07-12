@@ -1,10 +1,10 @@
 import React, { useCallback } from 'react';
-import logo from '@assets/fon/logo.png';
 import { MenuButton } from './MenuButton';
 import { Menu, type ItemKey } from './Menu';
 import { MobileMenu } from './MobileMenu';
 import { PriceCarousel } from './PriceCarousel';
 import { IoIosArrowRoundUp } from 'react-icons/io';
+import logo from '../../assets/fon/logo.png';
 
 const PriceZoon: React.FC = () => {
     const [isOpen, setIsOpen] = React.useState(false);
@@ -44,7 +44,7 @@ const PriceZoon: React.FC = () => {
                         <PriceCarousel activeItem={activeItem} />
                     </div>
                     {activeItem === null && (
-                        <h2 className="text-white text-center  flex items-center text-2xl md:text-4xl font-bold mb-4">
+                        <h2 className="text-white text-center flex items-center text-2xl md:text-4xl font-bold mx-auto">
                             Нажми на меню
                             <IoIosArrowRoundUp className='text-[#cbe2bf] ml-2 rotate-55' />
                         </h2>
