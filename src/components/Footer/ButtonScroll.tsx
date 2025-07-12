@@ -13,7 +13,6 @@ const ButtonScroll = () => {
     const handleScroll = useCallback(() => {
         const currentScrollY = window.pageYOffset;
 
-        // Определяем, прокручивается ли вверх или вниз
         if (currentScrollY < lastScrollY) {
             setIsScrollingUp(true);
         } else {
