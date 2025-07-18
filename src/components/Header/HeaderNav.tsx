@@ -12,7 +12,7 @@ interface HeaderNavProps {
     scrollToDiscount: () => void;
 }
 
-export const HeaderNav: React.FC<HeaderNavProps> = ({ scrollToAbout, scrollToFavorite, scrollToDiscount }) => {
+export const HeaderNav: React.FC<HeaderNavProps> = ({ scrollToFavorite, scrollToDiscount }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isPhoneModalOpen, setIsPhoneModalOpen] = useState(false);
 
@@ -27,7 +27,7 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({ scrollToAbout, scrollToFav
                     </a>
 
                     <MobileMenuButton isOpen={isMenuOpen} toggleMenu={toggleMenu} />
-                    <DekstopNav scrollToAbout={scrollToAbout} scrollToFavorite={scrollToFavorite} scrollToDiscount={scrollToDiscount} />
+                    <DekstopNav scrollToFavorite={scrollToFavorite} scrollToDiscount={scrollToDiscount} />
                     <div className="hidden md:flex items-center">
                         <button
                             onClick={() => setIsPhoneModalOpen(true)}
@@ -40,7 +40,6 @@ export const HeaderNav: React.FC<HeaderNavProps> = ({ scrollToAbout, scrollToFav
 
                 <MobileMenu
                     isOpen={isMenuOpen}
-                    scrollToAbout={scrollToAbout}
                     scrollToFavorite={scrollToFavorite}
                     scrollToDiscount={scrollToDiscount}
                     onOpenPhoneModal={() => setIsPhoneModalOpen(true)}

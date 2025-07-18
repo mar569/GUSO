@@ -42,6 +42,57 @@ h2 {
   min-height: 100vh;
 }
 
+.head_nav {
+  position: relative;
+}
+
+.head_nav::before {
+  content: '';
+  position: absolute;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 0;
+  inset: 0;
+}
+
+.head_nav ul {
+  position: relative;
+  z-index: 1;
+}
+
+.head_nav li {
+  position: relative;
+  overflow: hidden;
+}
+
+.head_nav li::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, #9124ff, #6eff24);
+  transition: left 0.5s ease;
+}
+
+.head_nav li:hover::after {
+  left: 100%;
+}
+
+.head_nav li a {
+  color: transparent;
+  background: linear-gradient(to right, #ffffff, #6eff24);
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 1px 1px 20px rgba(22, 79, 1, 0.665);
+  transition: color 0.3s ease;
+}
+
+.head_nav li:hover a {
+  color: #6eff24;
+}
+
 .bar {
   background: url(assets/BarPage/BG.svg) no-repeat;
   background-size: cover;
@@ -211,4 +262,77 @@ h2 {
   50% {
     transform: scale(1.1);
   }
+}
+
+.carousel {
+  background: #191919;
+  box-shadow: 4px 4px 20px #e0e5ecb1, -4px -3px 20px #d49be9a5;
+  border-radius: 30px;
+  overflow: hidden;
+}
+.card-button {
+  background: #2c2c2c;
+  box-shadow: 10px 10px 20px #e0e5ecb1, -10px -10px 20px #ffffff;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.button-click {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(to right, #0d0d0d, #081001);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button-click:hover {
+  background-color: rgba(0, 255, 0, 0.7);
+  box-shadow: 0 4px 20px rgba(0, 255, 0, 0.5);
+}
+
+.button-click:active {
+  background-color: #28a745;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.button-click::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 1px;
+  background: #7824ff;
+  animation: animate 2s linear infinite;
+  animation-delay: 0.5s;
+}
+
+@keyframes animate {
+  0% {
+    right: -100%;
+  }
+  50% {
+    right: 100%;
+  }
+  100% {
+    right: -100%;
+  }
+}
+
+.card-game {
+  box-shadow: 4px 4px 20px #e0e5ecb1, -4px -3px 20px #d49be9a5;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.decsk {
+  text-shadow: 0 0 20px #cadefb54, -1px -1px 20px #d49be94a;
+}
+
+.home-about {
+  background: radial-gradient(circle, rgb(25, 25, 25, 1) 44%, rgb(0, 0, 0) 88%);
 }

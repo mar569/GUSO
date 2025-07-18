@@ -6,6 +6,7 @@ import PageAbout from './components/Fps/PageAbout';
 import Header from './components/Header/Header';
 import Favorite from './components/Favorite';
 import PriceZoon from './components/PricePageZoon/PriceZoon';
+import HomeAbout from './components/aboutPageThis/HomeAbout';
 
 const Home = lazy(() => import('./components/Room/Home'));
 const Atmosfere = lazy(() => import('./components/Atmosfere'));
@@ -34,8 +35,8 @@ function App() {
       <div
         style={{
           transition: 'opacity 0.3s ease',
-          opacity: location.pathname === '/bar' || location.pathname === '/prices' ? 0 : 1,
-          height: location.pathname === '/bar' || location.pathname === '/prices' ? 0 : 'auto',
+          opacity: location.pathname === '/bar' || location.pathname === '/prices' || location.pathname === '/aboutus' ? 0 : 1,
+          height: location.pathname === '/bar' || location.pathname === '/prices' || location.pathname === '/aboutus' ? 0 : 'auto',
           overflow: 'hidden'
         }}
       >
@@ -72,6 +73,13 @@ function App() {
           <Suspense fallback={<ClipLoader color="#769e6b" size={60} />}>
             <PriceZoon />
           </Suspense>
+
+        } />
+        <Route path="/aboutus" element={
+          <Suspense fallback={<ClipLoader color="#769e6b" size={60} />}>
+            <HomeAbout />
+          </Suspense>
+
         } />
       </Routes>
 

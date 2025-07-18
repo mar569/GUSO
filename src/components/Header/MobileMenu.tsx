@@ -16,13 +16,12 @@ const menuVariants = {
 
 interface IMobileMenuProps {
     isOpen: boolean;
-    scrollToAbout: () => void;
     scrollToFavorite: () => void;
     scrollToDiscount: () => void;
-    onOpenPhoneModal: () => void; // Добавлено для открытия модального окна
+    onOpenPhoneModal: () => void;
 }
 
-export const MobileMenu: React.FC<IMobileMenuProps> = ({ isOpen, scrollToAbout, scrollToFavorite, scrollToDiscount, onOpenPhoneModal }) => {
+export const MobileMenu: React.FC<IMobileMenuProps> = ({ isOpen, scrollToFavorite, scrollToDiscount, onOpenPhoneModal }) => {
     return (
         <AnimatePresence>
             {isOpen && (
@@ -34,8 +33,10 @@ export const MobileMenu: React.FC<IMobileMenuProps> = ({ isOpen, scrollToAbout, 
                     className="md:hidden absolute top-10 left-0 w-full shadow-lg z-50"
                 >
                     <ul className="flex flex-col text-center py-2" style={{ fontFamily: 'Poppins' }}>
-                        <li className="py-3 hover:bg-green-500" onClick={scrollToAbout}>
-                            О нас
+                        <li className="py-3 hover:bg-green-500" >
+                            <Link to="/aboutus">
+                                О нас
+                            </Link>
                         </li>
                         <li className="py-3 hover:bg-green-500" onClick={scrollToFavorite}>
                             Твои любимые места
