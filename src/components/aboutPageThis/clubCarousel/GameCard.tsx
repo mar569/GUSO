@@ -10,14 +10,15 @@ interface GameCardProps {
 const GameCard: React.FC<GameCardProps> = React.memo(({ game, onClick }) => {
     const [isOpen, setIsOpen] = useState(false);
 
-    const handleCardClick = () => {
+    const handleCardClick = (e: React.MouseEvent) => {
+        e.stopPropagation();
         setIsOpen((prev) => !prev);
         onClick(game);
     };
 
     return (
         <div
-            className="relative cursor-pointer w-full min-w-[250px]  h-[320px] mx-2 my-4 md:mx-4 md:my-6"
+            className="relative cursor-pointer w-full min-w-[250px] h-[320px] mx-2 my-4 md:mx-4 md:my-6"
             style={{ perspective: '1000px' }}
             onClick={handleCardClick}
         >
@@ -65,6 +66,17 @@ const GameCard: React.FC<GameCardProps> = React.memo(({ game, onClick }) => {
                         <span className="text-blue-300 mr-2 text-lg">📅</span>
                         <span><strong>Дата:</strong> {game.releaseDate}</span>
                     </div>
+                    <div className="flex justify-center">
+                        <a
+                            href={game.trailerUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn_trailer text-white border-2 border-cyan-50 rounded-full  px-4 py-2"
+                        >
+                            Посмотреть трейлер
+                        </a>
+                    </div>
+
                 </div>
             </motion.div>
         </div>

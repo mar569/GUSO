@@ -31,12 +31,12 @@ const PlayStationVideo: React.FC = () => {
     }, []);
 
     return (
-        <div className="overflow-hidden relative w-[398px] md:w-full max-h-[517px] ">
+        <div className="overflow-hidden relative w-full p-4 md:p-0">
             <video
                 ref={videoRef}
                 src="/videos/IMG_5683.MP4"
                 muted
-                className="w-full min-h-[517px] h-auto object-cover"
+                className="w-full h-[70vh] md:min-h-[517px] object-cover"
                 style={{
                     borderRadius: "0 45px 45px 0",
                 }}

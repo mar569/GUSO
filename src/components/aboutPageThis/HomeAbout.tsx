@@ -1,8 +1,11 @@
-import AdvantPage from "./AdvantPage"
+import AdvantPage from "./advant/AdvantPage"
 import AnimateInfo from "./AnimateInfo"
 import ClubImage from "./ClubImage"
-import PlayGame from "./PlayGame"
+import PlayGame from "./clubCarousel/PlayGame"
 import PlayStation from "./PlayStation"
+import Zone from "./zone/Zone"
+import Premium from "./Premium"
+
 
 
 
@@ -15,6 +18,8 @@ function HomeAbout() {
                 <PlayStation />
                 <ClubImage />
                 <AdvantPage />
+                <Zone />
+                <Premium />
             </div>
         </>
     )

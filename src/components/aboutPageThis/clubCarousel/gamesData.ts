@@ -1,6 +1,5 @@
-import * as images from '../../assets/playGame'; // Импортируем изображения
+import * as images from '../../../assets/playGame';
 
-// Определяем интерфейс для игры
 export interface Game {
   id: number;
   title: string;
@@ -8,9 +7,8 @@ export interface Game {
   rating: string;
   description: string;
   releaseDate: string;
+  trailerUrl?: string;
 }
-
-// Создаем массив игр
 export const games: Game[] = [
   {
     id: 1,
@@ -20,6 +18,7 @@ export const games: Game[] = [
     description:
       'Открытый мир RPG, действие которого происходит в дистопическом будущем.',
     releaseDate: '10.12.2020',
+    trailerUrl: 'https://www.youtube.com/watch?v=sJbexcm4Trk',
   },
   {
     id: 2,
@@ -28,6 +27,7 @@ export const games: Game[] = [
     rating: '9.0',
     description: 'Многопользовательская игра в жанре MOBA.',
     releaseDate: '9.07.2013',
+    trailerUrl: 'https://www.youtube.com/watch?v=-cSFPIwMEq4',
   },
   {
     id: 3,
@@ -36,6 +36,7 @@ export const games: Game[] = [
     rating: '8.0',
     description: 'Командный шутер от первого лица.',
     releaseDate: '21.08.2012',
+    trailerUrl: 'https://www.youtube.com/watch?v=c80dVYcL69E',
   },
   {
     id: 4,
@@ -44,6 +45,7 @@ export const games: Game[] = [
     rating: '8.5',
     description: 'Тактический шутер с уникальными персонажами.',
     releaseDate: '2.06.2020',
+    trailerUrl: 'https://www.youtube.com/watch?v=e_E9W2vsRbQ',
   },
   {
     id: 5,
@@ -53,6 +55,7 @@ export const games: Game[] = [
     description:
       'Королевская битва, где игроки сражаются, чтобы остаться последними.',
     releaseDate: '20.12.2017',
+    trailerUrl: 'https://www.youtube.com/watch?v=S0wCM-zNrfM',
   },
   {
     id: 6,
@@ -61,6 +64,7 @@ export const games: Game[] = [
     rating: '9.0',
     description: 'Пользовательская игра в жанре MOBA.',
     releaseDate: '27.10.2009',
+    trailerUrl: 'https://www.youtube.com/watch?v=vzHrjOMfHPY',
   },
   {
     id: 7,
@@ -69,6 +73,8 @@ export const games: Game[] = [
     rating: '8.5',
     description: 'Бесплатная королевская битва.',
     releaseDate: '4.02.2019',
+    trailerUrl:
+      'https://www.youtube.com/watch?v=3WZ5DNIzc_o&list=RD3WZ5DNIzc_o&start_radio=1',
   },
   {
     id: 8,
@@ -77,6 +83,7 @@ export const games: Game[] = [
     rating: '9.0',
     description: 'Королевская битва с механикой строительства.',
     releaseDate: '25.07.2017',
+    trailerUrl: 'https://www.youtube.com/watch?v=d3OKTfZS5qE',
   },
   {
     id: 9,
@@ -85,6 +92,7 @@ export const games: Game[] = [
     rating: '9.0',
     description: 'Открытый мир RPG.',
     releaseDate: '28.09.2020',
+    trailerUrl: 'https://www.youtube.com/watch?v=HLUY1nICQRY',
   },
   {
     id: 10,
@@ -93,6 +101,7 @@ export const games: Game[] = [
     rating: '8.5',
     description: 'Бесплатная королевская битва.',
     releaseDate: '10.03.2020',
+    trailerUrl: 'https://www.youtube.com/watch?v=0E44DClsX5Q',
   },
   {
     id: 11,
@@ -101,5 +110,6 @@ export const games: Game[] = [
     rating: '9.0',
     description: 'Игра в жанре survival horror.',
     releaseDate: '7.05.2021',
+    trailerUrl: 'https://www.youtube.com/watch?v=xKJIfuUdf3A',
   },
 ];

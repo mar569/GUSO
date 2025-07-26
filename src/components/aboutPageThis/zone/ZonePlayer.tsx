@@ -1,6 +1,10 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from 'react';
 
-const DeviceVideo: React.FC = () => {
+interface ZonePlayerProps {
+    src: string;
+}
+
+const ZonePlayer: React.FC<ZonePlayerProps> = ({ src }) => {
     const videoRef = useRef<HTMLVideoElement | null>(null);
     const [error, setError] = useState<string | null>(null);
 
@@ -31,15 +35,12 @@ const DeviceVideo: React.FC = () => {
     }, []);
 
     return (
-        <div className="overflow-hidden relative w-[398px] md:w-full">
+        <div className="relative h-[680px] w-full max-w-[1400px] flex items-center justify-center mx-auto">
             <video
                 ref={videoRef}
-                src="/videos/IMG_5676.MP4"
+                src={src}
                 muted
-                className="w-full h-[70vh] md:min-h-[517px] object-cover"
-                style={{
-                    borderRadius: "45px 0 0 45px",
-                }}
+                className="absolute inset-0 w-full h-full object-cover"
             />
             {error && (
                 <div className="absolute bottom-10 left-0 w-full flex justify-center">
@@ -50,4 +51,4 @@ const DeviceVideo: React.FC = () => {
     );
 }
 
-export default DeviceVideo;
+export default ZonePlayer;

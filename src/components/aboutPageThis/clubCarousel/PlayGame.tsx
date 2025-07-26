@@ -1,22 +1,17 @@
+
 import React, { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import Carousel from './Carousel';
 import { games } from './gamesData';
 import { FaArrowLeftLong, FaArrowRight } from 'react-icons/fa6';
-import Institution from './Institution';
+import Institution from '../Institution';
 
 const PlayGame: React.FC = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
-
     const totalCards = games.length;
 
     const handleNext = useCallback(() => {
-        setCurrentIndex((prev) => {
-            if (prev + 1 >= totalCards) {
-                return 0;
-            }
-            return prev + 1;
-        });
+        setCurrentIndex((prev) => (prev + 1) % totalCards);
     }, [totalCards]);
 
     const handlePrev = useCallback(() => {
@@ -36,6 +31,7 @@ const PlayGame: React.FC = () => {
                 games={games}
                 currentIndex={currentIndex}
                 onCardClick={() => { }}
+                setCurrentIndex={setCurrentIndex}
             />
 
             <div className="flex justify-between mt-4">
@@ -47,11 +43,8 @@ const PlayGame: React.FC = () => {
                 </button>
             </div>
 
-            <div className="w-full flex justify-center mt-[24px] ">
-                <button
-                    className='button-click flex w-full max-w-[300px] justify-center text-center items-center cursor-pointer bg-gradient-to-r from-[#0d0d0d] to-[#081001] py-2 px-6 rounded-4xl text-[18px] md:text-[20px] font-bold'
-                    style={{ fontFamily: "'Poppins', sans-serif" }}
-                >
+            <div className="w-full flex justify-center mt-[24px]">
+                <button className='button-click flex w-full max-w-[300px] justify-center text-center items-center cursor-pointer bg-gradient-to-r from-[#0d0d0d] to-[#081001] py-2 px-6 rounded-4xl text-[18px] md:text-[20px] font-bold'>
                     <Link to="/prices" className="text-inherit">Забронировать</Link>
                 </button>
             </div>

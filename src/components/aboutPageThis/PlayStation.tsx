@@ -7,7 +7,7 @@ const PlayStation: React.FC = () => {
                 <PlayStationVideo />
             </div>
 
-            <div className="flex flex-col items-start max-w-[567px] max-h-[516px] justify-center order-2 md:order-2 md:mr-auto ml-4 md:ml-11 mt-10 md:mt-0 ">
+            <div className="flex flex-col items-start max-w-[567px] max-h-[516px] justify-center order-2 md:order-2 md:mr-auto ml-4 md:ml-11  ">
                 <h4 className="text-[#FFFFFF] text-[30px] sm:text-[40px] md:text-[64px] max-w-[471px] text-right"
                     style={{ lineHeight: '100%' }}>Играй на <span className="text-[#2293FC]">playstation 5</span>
                 </h4>

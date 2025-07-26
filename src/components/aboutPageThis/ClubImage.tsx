@@ -5,12 +5,12 @@ const ClubImage: React.FC = () => {
         <div className="w-full max-w-[1920px] mx-auto overflow-hidden -z-10 min-h-[697px] ">
             <div className="flex justify-center items-center mb-8 gap-2">
                 <img src={camera} alt="" className='w-[64px] h-[48px] md:w-[104px] md:h-[80px]' />
-                <h4 className="text-[30px] text-center font-medium text-[#FFFFFF] md:text-[64px]">
+                <h4 className="text-[26px] text-center font-medium text-[#FFFFFF] md:text-[64px]">
                     Фотки с нашего клуба
                 </h4>
             </div>
 
-            <div className="flex flex-col lg:flex-row justify-center gap-2">
+            <div className="flex flex-col lg:flex-row justify-center gap-2 p-4 md:p-0 ">
                 <div className="flex-1 relative overflow-hidden">
                     <img
                         src={images.club1}
