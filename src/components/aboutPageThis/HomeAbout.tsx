@@ -5,6 +5,8 @@ import PlayGame from "./clubCarousel/PlayGame"
 import PlayStation from "./PlayStation"
 import Zone from "./zone/Zone"
 import Premium from "./Premium"
+import Events from "./evenPage/Events"
+
 
 
 
@@ -20,6 +22,7 @@ function HomeAbout() {
                 <AdvantPage />
                 <Zone />
                 <Premium />
+                <Events />
             </div>
         </>
     )
