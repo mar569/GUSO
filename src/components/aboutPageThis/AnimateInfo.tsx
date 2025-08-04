@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import logo from '../../assets/fon/logo.png';
 import { Link } from 'react-router-dom';
+import video_1 from '../../assets/IMG_5659.mp4';
 
 const AnimatedVideo: React.FC = () => {
     const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -24,10 +25,10 @@ const AnimatedVideo: React.FC = () => {
         <div className="h-screen w-screen overflow-hidden relative">
             <video
                 ref={videoRef}
-                src="/videos/IMG_5659.MP4"
+                src={video_1}
                 autoPlay
                 muted
-                className="absolute top-0 left-0 w-full h-full object-cover"
+                className="w-full h-full object-cover"
             />
             <header className="flex flex-col px-4 sm:px-0 py-4 h-full absolute top-0 left-0 w-full z-10">
                 <div className="container h-full">

@@ -11,7 +11,7 @@ export const EventCard = ({ event, onClick }: EventCardProps) => (
         <img
             src={event.image}
             alt={event.title}
-            className="absolute inset-0 w-full h-full object-cover"
+            className=" w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
 

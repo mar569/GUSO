@@ -6,6 +6,7 @@ import PlayStation from "./PlayStation"
 import Zone from "./zone/Zone"
 import Premium from "./Premium"
 import Events from "./evenPage/Events"
+import { Footer } from "./Footer"
 
 
 
@@ -23,6 +24,7 @@ function HomeAbout() {
                 <Zone />
                 <Premium />
                 <Events />
+                <Footer />
             </div>
         </>
     )

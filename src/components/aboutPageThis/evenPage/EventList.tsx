@@ -10,7 +10,7 @@ interface EventsListProps {
 }
 
 export const EventsList = ({ events, onEventClick, cols = 2 }: EventsListProps) => {
-    const gridClass = `grid grid-cols-1 ${cols >= 2 ? 'md:grid-cols-2' : ''} gap-6`;
+    const gridClass = `max-w-[800px] ml-auto grid grid-cols-1 ${cols >= 2 ? 'md:grid-cols-2' : ''} gap-[20px]`;
 
     return (
         <div className={gridClass}>

@@ -1,17 +1,15 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
+import video_2 from '../../assets/IMG_5676.mp4';
 
 const PlayStationVideo: React.FC = () => {
     const videoRef = useRef<HTMLVideoElement | null>(null);
-    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (videoRef.current) {
                     if (entry.isIntersecting) {
-                        videoRef.current.play().catch(() => {
-                            setError("Не удалось воспроизвести видео. Пожалуйста, обновите страницу или проверьте настройки браузера.");
-                        });
+                        videoRef.current.play();
                     } else {
                         videoRef.current.pause();
                     }
@@ -34,18 +32,13 @@ const PlayStationVideo: React.FC = () => {
         <div className="overflow-hidden relative w-full p-4 md:p-0">
             <video
                 ref={videoRef}
-                src="/videos/IMG_5683.MP4"
+                src={video_2}
                 muted
-                className="w-full h-[70vh] md:min-h-[517px] object-cover"
+                className="w-full h-full object-cover"
                 style={{
                     borderRadius: "0 45px 45px 0",
                 }}
             />
-            {error && (
-                <div className="absolute bottom-10 left-0 w-full flex justify-center">
-                    <p className="bg-red-500 text-white p-2 rounded-lg">{error}</p>
-                </div>
-            )}
         </div>
     );
 }

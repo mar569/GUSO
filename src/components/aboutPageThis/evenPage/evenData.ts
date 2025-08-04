@@ -1,6 +1,12 @@
 import type { Event } from '../../types/evenTypes';
 import man from '../../../assets/evens/man.png';
 import movie from '../../../assets/evens/movie.png';
+import dotaa from '../../../assets/evens/dotaa.png';
+import fortnite from '../../../assets/evens/fortnite.png';
+import games from '../../../assets/evens/Games.png';
+import hookah from '../../../assets/evens/hookah_two.png';
+import batl from '../../../assets/evens/music_batl.png';
+import vr from '../../../assets/evens/VR.png';
 
 const EVENTS_DATA: Event[] = [
   {
@@ -25,7 +31,7 @@ const EVENTS_DATA: Event[] = [
     title: 'Акция на кальяны',
     description:
       'При покупке 2 кальянов - 1 час в подарок для групп от 4 человек.',
-    image: movie,
+    image: hookah,
     type: 'hookah',
   },
   {
@@ -33,7 +39,7 @@ const EVENTS_DATA: Event[] = [
     date: '10 сентября',
     title: 'Киберспортивный марафон',
     description: 'Трансляция турнира по Dota 2 с комментариями.',
-    image: man,
+    image: dotaa,
     type: 'esports',
   },
   {
@@ -41,7 +47,7 @@ const EVENTS_DATA: Event[] = [
     date: '15 сентября',
     title: 'Караоке-баттл',
     description: 'Соревнование в пении с призами. Участие бесплатное.',
-    image: movie,
+    image: batl,
     type: 'entertainment',
   },
   {
@@ -50,7 +56,7 @@ const EVENTS_DATA: Event[] = [
     title: 'Вечер настольных игр',
     description:
       'Играйте в любимые настольные игры с друзьями. Вход свободный.',
-    image: man,
+    image: games,
     type: 'entertainment',
   },
   {
@@ -58,31 +64,15 @@ const EVENTS_DATA: Event[] = [
     date: '25 сентября',
     title: 'VR-эксперименты',
     description: 'Попробуйте новейшие VR-технологии. 200₽/10 мин.',
-    image: movie,
+    image: vr,
     type: 'entertainment',
   },
   {
     id: 8,
-    date: '30 сентября',
-    title: 'Косплей-пати',
-    description: 'Конкурс костюмов с призами. Фотосессия включена.',
-    image: movie,
-    type: 'entertainment',
-  },
-  {
-    id: 9,
     date: '5 октября',
     title: 'Турнир по Fortnite',
     description: 'Соло-соревнование. Призовой фонд 15,000₽.',
-    image: movie,
-    type: 'gaming',
-  },
-  {
-    id: 10,
-    date: '10 октября',
-    title: 'Ретро-гейминг',
-    description: 'Вечер классических игр на старых консолях (NES, Sega).',
-    image: man,
+    image: fortnite,
     type: 'gaming',
   },
 ];

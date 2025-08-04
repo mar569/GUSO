@@ -7,14 +7,13 @@ const Device: React.FC = () => {
                 <DeviceVideo />
             </div>
 
-            <div className="flex flex-col items-start max-w-[567px] max-h-[516px] justify-center order-2 md:order-1 md:ml-auto mr-11 ">
+            <div className="flex flex-col items-start max-w-[567px] max-h-[516px] justify-center order-2 md:order-1 md:ml-auto mr-11 mt-2 md:mt-0">
                 <h4 className="text-[#AC24FF] text-[30px] sm:text-[40px] md:text-[64px] max-w-[332px]"
                     style={{ lineHeight: '100%' }}>Крутые <span className="text-[#FFFFFF]">девайсы</span>
                 </h4>
                 <p className="mt-4 text-[16px] md:text-[24px] text-white"
                     style={{ lineHeight: '100%' }}>Играй на современном железе, слушай в топовых наушниках, кликай на механической клавиатуре. Будь уверен, наши девайсы дают раскрыть весь твой игровой скилл на максимум.</p>
             </div>
-
         </div>
     );
 }

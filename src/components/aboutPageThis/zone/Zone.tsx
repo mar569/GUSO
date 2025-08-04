@@ -4,13 +4,14 @@ import pc from '../../../assets/zoneabout/pc.png';
 import samsung from '../../../assets/zoneabout/samsung.png';
 import clava from '../../../assets/zoneabout/clava.png';
 import ZonePlayer from './ZonePlayer';
+import video_4 from '../../../assets/IMG_5684.mp4';
 
 const Zone: React.FC = () => {
     return (
         <div className='container p-4 md:p-0 w-full max-w-[1920px] min-h-[852px] lg:h-[1074px] mx-auto bg-[#131313] mt-4'>
             <ZoneHeader />
             <div className="relative">
-                <ZonePlayer src="/videos/IMG_5684.MP4" />
+                <ZonePlayer src={video_4} />
                 <div className="absolute inset-0 flex flex-col items-center justify-center z-10 p-4 md:p-0">
                     <h2 className="text-white text-3xl sm:text-4xl lg:text-5xl font-bold text-left mb-8">
                         ЗОНЫ

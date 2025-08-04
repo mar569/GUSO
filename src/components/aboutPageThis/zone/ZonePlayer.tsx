@@ -40,7 +40,7 @@ const ZonePlayer: React.FC<ZonePlayerProps> = ({ src }) => {
                 ref={videoRef}
                 src={src}
                 muted
-                className="absolute inset-0 w-full h-full object-cover"
+                className="w-full h-full object-cover"
             />
             {error && (
                 <div className="absolute bottom-10 left-0 w-full flex justify-center">
